@@ -1,0 +1,161 @@
+main{
+    width: 100%;
+    height: auto;
+
+    .main__principal{
+        width: 100%;
+        min-height:80vh;
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 2%;
+        
+        .principal__boxText{
+            width: 50%;
+
+            .boxText__title{
+                font-size: 2.5rem;
+                margin: 0% 0% 5% 2%;
+                color:rgb(255, 95, 37);
+            }
+
+            .boxText__description{
+                font-size: 1.4rem;
+                text-align: justify;
+                width: 75%;
+                margin-left:5%;
+            }
+        }
+
+        .principal__image{
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            margin-right: 2%;
+
+            img{
+                width: 60%;
+                height:100%;
+            }
+        }
+    }
+
+    .main__recomend{
+
+        .recomend__text{
+            font-size:1.5rem;
+            margin: 0 0 6% 3%;
+        }
+
+        .recomend__targ{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 85%;
+            margin: auto;
+
+            .targ{
+                width: 220px;
+                height: 300px;
+                text-decoration: none;
+                color: black;
+                margin:0 1% 7%;
+                cursor:pointer;
+                
+                .targ__targ{
+                    color: rgb(233, 233, 233);
+                    height: 100%;
+                    // padding:5%;
+                    background-color: rgb(10, 10, 10);
+                    border-radius: 10px 10px 5px 5px;
+                    // border: .1px solid rgb(245, 222, 255);
+                    font-weight: 300;
+
+                    figure{
+                        width: 100%;
+                        height: 56%;
+                        
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 10px 10px 0 0;
+                            // border: .1px solid rgb(245, 222, 255);
+                            filter: saturate(1.5);
+                        }
+                    }
+
+                    &:hover{
+                        background-color:rgb(15, 15, 15);
+                        border-radius: 10px;
+                        border: .05px solid rgb(144, 40, 9);
+
+                    }
+
+                    .r_targ__price{
+                        margin-top: 3%;
+                        padding-left: 2%;
+                        font-weight: 700;
+                        font-size: 1.3rem;
+                    }
+                    .r_targ__elements{
+                        margin-top: 3%;
+                        padding: 2% 0 1% 0;
+                        font-size: .96rem;
+                        
+                        p{
+                            padding-left: 2%;
+                        }
+                    }
+                    
+                    .r_targ__title{
+                        padding-left: 2%;
+                        font-weight: 500;
+                    }
+                    .r_targ__date{
+                        padding-left: 2%;
+                        margin-bottom:1%;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    .main__video{
+        width: 100%;
+        margin-top: 3%;
+
+        .video__text{
+            font-size: 1.7rem;
+            margin-bottom: 4%;
+        }
+
+        .video__1{
+            display: block;
+            width: 30%;
+            margin: auto;
+        }
+
+    }
+
+    @media (max-width:550px){
+        .main__principal{
+            .principal__boxText{
+                width: 100%;
+
+                .boxText__title{
+                    text-align: center;
+                }
+                .boxText__description{
+                    width: 90%;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+        }
+        .main__video{
+            display: none;
+        }
+    }
+}

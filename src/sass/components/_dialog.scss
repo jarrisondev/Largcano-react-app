@@ -1,0 +1,174 @@
+.dialog{
+    position: fixed;
+    // background-color: rgb(0, 0, 0);
+    background-image: url(./img/fondo/2.png);
+    background-size: cover;
+    width: 100vw;
+    min-height: 100%;
+    display: none;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    z-index: 100;
+    
+    .dialog__container{
+        color: white;
+        background-color:rgb(3, 3, 3);
+        width: 80%;
+        height: 500px;
+        display: flex;
+        border-radius: 5px;
+
+        .container__img{
+            width: 63%;
+            
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 5px 0 0 5px;
+            }
+        }
+
+        .container__inf{
+            width: 59%;
+            font-size: .9rem;
+            margin: 3% 0 7.6% 6%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h3{
+                font-size: 1.7rem;
+            }
+
+            .price{
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: rgb(255, 145, 0);
+                margin: 4% 0 0 0;
+            }
+            
+            .description{
+                width: 70%;
+                font-size: 1.1rem;
+                margin: 4% 0 1% 0;
+            }
+            
+            .property{
+                font-size: 1.1rem;
+                margin: 4% 0 0 4%;
+            }
+
+            .buy{
+                margin-top: 10%;
+                padding: 15px 15px;
+                width: 22%;
+                max-height: 50px;
+                background-color: rgb(223, 79, 12);
+                font-size: 1.3rem;
+                font-weight: 600;
+                border-radius: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                
+                &:hover{
+                    background-color: rgb(184, 65, 10);
+                }  
+            }  
+        }
+    }
+    
+    .exit{
+        color:rgb(195, 195, 195);
+        font-size: 2rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 2% 3%;
+        cursor: pointer;
+        
+        &:hover{
+            color:red;
+        }
+    }
+
+    @media (max-width:550px){
+        background-image: none;
+        background-color: rgb(3, 3, 3);           
+        height: 100vh;
+        flex-wrap: wrap;
+
+        .fa-arrow-left {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            margin: 0 0 4% 7%;
+        }
+
+        .dialog__container{
+            width: 100%;
+            margin: auto;
+            height: 87vh;
+            flex-wrap: wrap;
+            border-radius: 0;
+
+            .container__img{
+                width: 100%;
+
+                img{
+                    border-radius: 20px 20px 0 0; 
+                }
+            }
+
+            .container__inf{
+                width: 100%;
+                margin: 3% 0 6% 6%;
+
+                h3{
+                    font-size: 1.6rem;
+                }
+
+                .description{
+                    width: 95%;
+                }
+
+                .buy{
+                    margin-top: 8%;
+                    width: 30%;
+                }
+            }
+        }
+
+        .fa-arrow-right {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 0 7% 4% 0;
+        }
+    }
+
+}
+
+.start{
+    display: flex;
+}
+
+.arrow{
+    color: rgb(202, 202, 202);
+    font-size: 30px;
+    cursor: pointer;
+
+    &:hover{
+        color: rgb(246, 83, 34);
+    }
+
+    &:nth-of-type(1){
+        margin-right:80px;
+    }
+    &:nth-of-type(2){
+        margin-left: 80px;
+    }
+}

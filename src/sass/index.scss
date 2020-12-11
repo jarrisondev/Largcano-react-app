@@ -1,0 +1,36 @@
+::-webkit-scrollbar{
+    width:5px;
+    background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(253, 75, 31);
+    border-radius:10px 0 0px 10px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    color:white;
+    background-color: black;
+}
+.overflow{
+    overflow: hidden;
+}
+.container{
+    width: 92%;
+    margin: 0 auto;
+    background-size: 100%;
+    font-size: 16px;
+    font-family: Gotham,'MuseoModerno', cursive;
+    user-select: none;
+}
+
+@import "components/dialog";
+@import "components/form";
+@import "components/header";
+@import "components/main";
+@import "components/footer";

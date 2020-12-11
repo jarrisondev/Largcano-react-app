@@ -1,0 +1,92 @@
+{
+    "targInf":[
+        {
+            "urlImage":"./img/recomend/1.jpg",
+            "title": "AUDI RS5 CABRIO 2020",
+            "price": "COP 90,325,568",
+            "description": "Disponoble audi cabrio 2020, en excelentes condiciones 1.4, mecanica, rines de lujo, al dia listo para hacer traspaso",
+            "property":"<ul><li>Marca: Audi</li><li>Condicón: Usado</li><li>Kilometraje: 123.000Km</li><li>Transmisión: Mecánica</li></ul>",
+            "date": "11 SEPT",
+            "place":"Medellín, Colombia",
+            "element1":"2020 - 123.000km",
+            "element2":"audi rs5 cabriao"
+        },
+        {
+            "urlImage":"./img/recomend/2.jpg",
+            "title": "RELOJ REYMOND WEIL PARFISAL",
+            "price": "COP 3,650,000",
+            "description": "Lindo reloj reymond weil en excelente estado como nuevo, Se entrega con caja",
+            "property":"<ul><li>Sexo: Hombre</li><li>Condicón: Usado</li></ul>",
+            "date": "HACE 2 DÍAS",
+            "place":"Manizales, Colombia",
+            "element1":"Reloj reymond weil",
+            "element2":"parfisal"
+        },
+        {
+            "urlImage":"./img/recomend/3.jpg",
+            "title": "ARRIENDO APARTAMENTO -SABANETA (ANTIOQUIA)",
+            "price": "COP 625,568",
+            "description": "Apartamento en arriendo, dee 72 m2 distribuidoss 3 alcobas, 2 closet, 1 vestier, 2 baños, cocina, pisos en ceramica, calentador, cuarto util.",
+            "property":"<ul><li>Tipo: Casa</li><li>Estrato: 4</li><li>Parqueadero: Si</li></ul>",
+            "date": "05 AGO",
+            "place":"Copacabana, Colombia",
+            "element1":"3 Dor. - 2Bñ. - 72m2",
+            "element2":"Arriendo apartamento"
+        },
+        {
+            "urlImage":"./img/recomend/4.jpg",
+            "title": "PLAYSTATION 5 CONSOLE",
+            "price": "COP 1,850,000",
+            "description": "Aumenta tus experiencias, Enriquece tus aventuras. Deje que la PS5 súper cargada lidere el camino",
+            "property":"<ul><li>Cpu: x86-64 AMD Ryzen</li><li>8 núcleos</li><li>16 gb de memoria</li><li>Tecnología HDR</li></ul>",
+            "date": "HACE 3 HORAS",
+            "place":"Bogotá, Colombia.",
+            "element1":"CPU X86-64-AMD Ryzen con 8 núcleos. 16gb de memoria",
+            "element2":""
+        },
+        {
+            "urlImage":"./img/recomend/5.jpg",
+            "title": "TENNIS ADIDAS ORIGINALS",
+            "price": "cop 259,900",
+            "description": "Tennis Adidas. Tallas disponibles para caballero. Estos tennis adoptan un enfoque minimalista. con una parte superior de gamuza y lona en una suela flexible vulcanizada.",
+            "property":"<ul><li>Tipo: Masculino</li><br><li>Tipo: Zapatos deportivos</li></ul>",
+            "date": "03 OCT",
+            "place":"Medellín, Colombia",
+            "element1":"Adidas tenis phosphere",
+            "element2":"Hombre"
+        },
+        {
+            "urlImage":"./img/recomend/6.jpg",
+            "title": "DRAGONBALL-Z - EATING NOODLES",
+            "price": "COP 50,830",
+            "description": "figura de colección elaborada en vinilo, original marca funko, caja especial. Un regalo muy especial",
+            "property":"<ul><li>Tamaño: 10cm</li><br><li>clasificación: +9 años</li></ul>",
+            "date": "10 SEP",
+            "place":"Medellín, Colombia",
+            "element1":"Funko Pop! Dragonball-z - Eating Noodles",
+            "element2":""
+        },
+        {
+            "urlImage":"./img/recomend/7.jpg",
+            "title": "PELUCHE DE LLAMA",
+            "price": "COP 39,900",
+            "description": "Llama del juego Fornite para decoración",
+            "property":"<ul><li>Tamaño: 25cm</li><br><li>clasificación: +3 años</li><br><li>Material: Lana</li></ul>",
+            "date": "30 AGO",
+            "place":"Cali, Colombia",
+            "element1":"Fornite",
+            "element2":"Peluche de llama"
+        },
+        {
+            "urlImage":"./img/recomend/8.jpg",
+            "title": "DRONE PHANTON III PRO 4K",
+            "price": "COP 978,208",
+            "description": "Drone Phantom III profesional DJI, maleta rígida portable, 2 baterías de litio, elices funcionales, recién salido de calibración.",
+            "property":"<ul><li>Camara: 4k 30fps</li><br><li>Tiempo vuelo: 30min</li><br><li>Ambiente: rural, ciudad(con licencia)</li></ul>",
+            "date": "HACE 1 DÍA",
+            "place":"Sabaneta, Antioquia",
+            "element1":"Drone Phamton III PRO 4k Cámara 4k, 30min de vuelo",
+            "element2":""
+        }
+    ]
+}
