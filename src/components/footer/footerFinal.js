@@ -8,7 +8,7 @@ function FooterFinal(){
                 <div className="inf_final__derechos_autor">
                     <p>© 2019-2020 LargCano</p>
                 </div>
-            </div>
+        </div>
     )
 }
 

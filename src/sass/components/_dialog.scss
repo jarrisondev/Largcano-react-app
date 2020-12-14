@@ -1,12 +1,11 @@
 .dialog{
     position: fixed;
-    // background-color: rgb(0, 0, 0);
     background-image: url(./img/fondo/2.png);
     background-size: cover;
     width: 100vw;
     min-height: 100%;
-    display: none;
-    // display: flex;
+    //display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     border: 0;

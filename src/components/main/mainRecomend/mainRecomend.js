@@ -1,6 +1,6 @@
 import React from 'react'
 import Targ from './targ'
-import {targInf} from './targInf.json'
+import {targInf} from '../../targInf.json'
 
 function MainRecomend () {
     return(
