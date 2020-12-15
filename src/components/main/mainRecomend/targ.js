@@ -1,25 +1,25 @@
 import React from 'react'
 
-function Targ (props){        
+function Targ ({url, price, element1, element2, place, date}){        
     return(
         <div className="targ" id="targ_1">
             <div className="targ__targ">
                 <figure className="r_targ__img">
-                    <img src= {props.url}  alt="Targeta"/>
+                    <img src= {url}  alt="Targeta"/>
                 </figure>
                 <div className="r_targ__price">
-                    <p id="precio">{props.price}</p>
+                    <p id="precio">{price}</p>
                 </div>
                 <div className="r_targ__elements">
-                    <p>{props.element1}</p>
-                    <p>{props.element2}</p>
+                    <p>{element1}</p>
+                    <p>{element2}</p>
                 </div>
                 <br/>
                 <div className="r_targ__title">
-                    <p>{props.place}</p>
+                    <p>{place}</p>
                 </div>
                 <div className="r_targ__date">
-                    <p>{props.date}</p>
+                    <p>{date}</p>
                 </div>
             </div>
         </div>

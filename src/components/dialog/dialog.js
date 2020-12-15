@@ -1,5 +1,5 @@
 import React from 'react'
-import {targInf} from '../targInf.json'
+//import {targInf} from '../targInf.json'
 
 function Dialog(){
     return(
@@ -11,7 +11,7 @@ function Dialog(){
                         <img id="img" src="./img/recomend/1.jpg" alt="Producto" />
                     </div>
                     <div className="container__inf">
-                        <h3 id="title">{targInf[0].title}</h3>
+                        <h3 id="title">Titulo</h3>
                         <p id="price" className="price">Precio</p>
                         <p id="description" className="description">Descripción</p>
                         <p id="property" className="property">propiedades</p>

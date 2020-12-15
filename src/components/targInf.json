@@ -1,6 +1,7 @@
 {
     "targInf":[
         {
+            "id":"0",
             "urlImage":"./img/recomend/1.jpg",
             "title": "AUDI RS5 CABRIO 2020",
             "price": "COP 90,325,568",
@@ -12,6 +13,7 @@
             "element2":"audi rs5 cabriao"
         },
         {
+            "id":"1",
             "urlImage":"./img/recomend/2.jpg",
             "title": "RELOJ REYMOND WEIL PARFISAL",
             "price": "COP 3,650,000",
@@ -23,6 +25,7 @@
             "element2":"parfisal"
         },
         {
+            "id":"2",
             "urlImage":"./img/recomend/3.jpg",
             "title": "ARRIENDO APARTAMENTO -SABANETA (ANTIOQUIA)",
             "price": "COP 625,568",
@@ -34,6 +37,7 @@
             "element2":"Arriendo apartamento"
         },
         {
+            "id":"3",
             "urlImage":"./img/recomend/4.jpg",
             "title": "PLAYSTATION 5 CONSOLE",
             "price": "COP 1,850,000",
@@ -45,6 +49,7 @@
             "element2":""
         },
         {
+            "id":"4",
             "urlImage":"./img/recomend/5.jpg",
             "title": "TENNIS ADIDAS ORIGINALS",
             "price": "cop 259,900",
@@ -56,6 +61,7 @@
             "element2":"Hombre"
         },
         {
+            "id":"5",
             "urlImage":"./img/recomend/6.jpg",
             "title": "DRAGONBALL-Z - EATING NOODLES",
             "price": "COP 50,830",
@@ -67,6 +73,7 @@
             "element2":""
         },
         {
+            "id":"6",
             "urlImage":"./img/recomend/7.jpg",
             "title": "PELUCHE DE LLAMA",
             "price": "COP 39,900",
@@ -78,6 +85,7 @@
             "element2":"Peluche de llama"
         },
         {
+            "id":"7",
             "urlImage":"./img/recomend/8.jpg",
             "title": "DRONE PHANTON III PRO 4K",
             "price": "COP 978,208",
