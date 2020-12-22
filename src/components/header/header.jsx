@@ -1,6 +1,6 @@
-import HeaderBanner from './headerBanner.js'
-import HeaderLogo from './headerLogo'
-import HeaderPublicar from './headerPublicar'
+import HeaderBanner from './headerBanner.jsx'
+import HeaderLogo from './headerLogo.jsx'
+import HeaderPublicar from './headerPublicar.jsx'
 
 function Header (){
     return(

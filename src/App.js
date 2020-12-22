@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import Dialog from './components/dialog/dialog.js'
-import Header from './components/header/header.js'
-import Main from './components/main/main.js'
-import Footer from './components/footer/footer.js'
+import Dialog from './components/dialog/dialog.jsx'
+import Header from './components/header/header.jsx'
+import Main from './components/main/main.jsx'
+import Footer from './components/footer/footer.jsx'
 
 function App() {
   let [targId, setTargId] = useState(0)

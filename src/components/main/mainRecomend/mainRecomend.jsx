@@ -1,5 +1,5 @@
 import React from 'react'
-import Targ from './targ'
+import Targ from './targ.jsx'
 import {targInf} from '../../targInf.json'
 
 function MainRecomend ({setTargId, setClassDialog}) {

@@ -1,5 +1,5 @@
-import SubFooter from './subFooter'
-import FooterFinal from './footerFinal'
+import SubFooter from './subFooter.jsx'
+import FooterFinal from './footerFinal.jsx'
 
 function Footer (){
     return(
