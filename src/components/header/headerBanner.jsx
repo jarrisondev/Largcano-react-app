@@ -1,10 +1,22 @@
 import React from 'react'
 
 function HeaderBanner(){
+    
+    let images=["./img/Banner/3.jpg", "./img/Banner/1.jpg", "./img/Banner/2.jpg"]
+    let indiceImg = 0
+    
+    function changeImageBanner(){
+        document.sliderBanner.src = images[indiceImg]
+
+        if (indiceImg < 2)indiceImg++
+        else indiceImg = 0
+    }
+    setInterval( changeImageBanner, 4000);
+    
     return(
         <>
         <div className="header__banner">
-            <img name="sliderBanner" src="./img/Banner/banner1.jpg" alt="Banner"/>
+            <img name="sliderBanner" src="./img/Banner/2.jpg" alt="Banner"/>
         </div>
         </>
     )

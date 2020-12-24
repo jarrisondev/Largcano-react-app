@@ -1,19 +1,19 @@
 import React, {useEffect} from 'react'
 import {targInf} from '../targInf.json'
 
-function Dialog({targId, setClassDialog, setTargId}){
+function Dialog({targId, setChekedDialog, setTargId}){
 
 
     function clickSig(){
-        if(targId === 7) setTargId(0)
+        if(targId === targInf.length-1) setTargId(0)
         else setTargId(targId + 1)
     }
     function clickAnt(){
-        if(targId === 0) setTargId(7)
+        if(targId === 0) setTargId(targInf.length-1)
         else setTargId(targId - 1)
     }
-    function setDialogClass(){
-        setClassDialog(false)
+    function setDialogCheked(){
+        setChekedDialog(false)
     }
 
     useEffect(()=>{
@@ -36,7 +36,7 @@ function Dialog({targId, setClassDialog, setTargId}){
                         <p id="buy" className="buy">Comprar <i className="fas fa-shopping-cart"></i></p>
                     </div>
                 </div>
-                <p><i className="fas fa-times exit" id="exit" onClick={setDialogClass}></i></p>
+                <p><i className="fas fa-times exit" id="exit" onClick={setDialogCheked}></i></p>
                 <i className="fas fa-arrow-right arrow" id="sig" onClick={clickSig} ></i>
             </dialog> 
         </>

@@ -11,10 +11,8 @@ function SubFooter (){
             </div>
             <br/>
             <div className="subfooter__integrantes">
-                <h6>Integrantes</h6>
-                <p>Daniel Mateo Largo <br/>Roldan</p>
-                <br/>
-                <p>Jarrison Camilo Cano<br/> Misas</p>
+                <h6>Desarrollador</h6>
+                <p>Jarrison Cano</p>
                 
             </div>
             <br/>
@@ -24,14 +22,6 @@ function SubFooter (){
                     <img src="./img/Redes/facebook.png" alt="Facebook"/>
                 </a>
                 <a href="https://www.instagram.com/mateolargo_r/" target="_blank" rel="noreferrer">
-                    <img src="./img/Redes/instagram.png" alt="Instagram"/>
-                </a>
-                <br/>
-                <br/>
-                <a href="https://twitter.com/JarrisonCano" target="_blank" rel="noreferrer">
-                    <img src="./img/Redes/twitter.png" alt="Twitter"/>
-                </a>
-                <a href="https://www.instagram.com/jarrisoncanom/" target="_blank" rel="noreferrer">
                     <img src="./img/Redes/instagram.png" alt="Instagram"/>
                 </a>
             </div>

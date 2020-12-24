@@ -1,12 +1,12 @@
 import MainPrincipal from './mainPrincipal.jsx'
 import MainRecomend from './mainRecomend/mainRecomend.jsx'
 
-function Main ({setTargId, setClassDialog}){
+function Main ({setTargId, setChekedDialog}){
     return(
         <> 
-        <main>
+        <main id="main">
             <MainPrincipal />
-            <MainRecomend setTargId={setTargId} setClassDialog={setClassDialog} id="main__main_recomend"/>
+            <MainRecomend setTargId={setTargId} setChekedDialog={setChekedDialog} id="main__main_recomend"/>
         </main>
         </>
     )
