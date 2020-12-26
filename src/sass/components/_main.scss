@@ -50,9 +50,8 @@ main{
         }
 
         .recomend__targ{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             width: 85%;
             margin: auto;
 
@@ -61,13 +60,12 @@ main{
                 height: 300px;
                 text-decoration: none;
                 color: black;
-                margin:0 1% 7%;
+                margin: 5% 5% 10% 5%;
                 cursor:pointer;
                 
                 .targ__targ{
                     color: rgb(233, 233, 233);
                     height: 100%;
-                    // padding:5%;
                     background-color: rgb(10, 10, 10);
                     border-radius: 10px 10px 5px 5px;
                     // border: .1px solid rgb(245, 222, 255);
@@ -157,6 +155,17 @@ main{
         }
         .main__video{
             display: none;
+        }
+
+        .main__recomend{
+    
+            .recomend__targ{
+                display: grid;
+                grid-template-columns: 1fr;
+                width: 75%;
+                margin: auto;
+        
+            }    
         }
     }
 }

@@ -1,16 +1,27 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import FirtPart from './firtPart.jsx'
 import SecondPart from "./secondPart.jsx"
 import {targInf} from '../targInf.json'
 
 function Form ({setCheckedForm}){
+    let date = new Date()
 
+    let months = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEPT','OCT','NOV','DIC']
+
+    //states
+        //cont that define the name of img for save in localstorage
+    let [cont, setCont] = useState(9 + localStorage.length)
+        //title, description
     let [title, setTitle] = useState(" ")
     let [description, setDescription] = useState("")
-    //caracteristics
+        //caracteristics
     let [c1, setC1] = useState("")
     let [c2, setC2] = useState("")
     let [c3, setC3] = useState("")
+        //place
+    let [place, setPlace] = useState("")
+    let [price, setPrice] = useState("")
+    let img = useRef("")
 
     function setFormCheked(){
         setCheckedForm(false)
@@ -19,16 +30,26 @@ function Form ({setCheckedForm}){
         targInf.push(data)
         setCheckedForm(false)
     }
+    function saveImg(){
+        const reader = new FileReader()
+
+        reader.addEventListener('load', ()=>{
+            localStorage.setItem(cont, reader.result)
+            setCont(cont+1)
+        })
+
+        reader.readAsDataURL(img.current.files[0])
+    }
 
     let data = {
         "id": (targInf.length + 1),
-        "urlImage":"./img/recomend/1.jpg",
+        "urlImage": localStorage.getItem(cont-1) ,
         "title": title,
-        "price": "COP 90,325,568",
+        "price": `COP ${price}`,
         "description": description,
         "property":`<ul><li>${c1}</li><li>${c2}</li><li>${c3}</li></ul>`,
-        "date": "11 SEPT",
-        "place":"Medellín, Colombia",
+        "date": `${date.getDate()} ${months[date.getMonth()]}`,
+        "place":place,
         "element1":title,
         "element2":""
 
@@ -48,13 +69,13 @@ function Form ({setCheckedForm}){
                         <h1 className="titleForm">Publicar Producto</h1>
                         <div className="form">
                             <i className="fas fa-times exitForm" id="exitForm" onClick={setFormCheked} ></i>
-                            <FirtPart setTitle={setTitle} setDescription={setDescription}/>
+                            <FirtPart setTitle={setTitle} setDescription={setDescription} setPrice={setPrice}/>
                             <br/>
                             <br/>
-                            <SecondPart setC1={setC1} setC2={setC2} setC3={setC3}/>
+                            <SecondPart setC1={setC1} setC2={setC2} setC3={setC3} setPlace={setPlace}/>
                             <br/>
                             <div className="loadFiles">
-                                <input type="file" id="file"/>
+                                <input ref={img} type="file" id="file" onChange={saveImg}/>
                             </div>
                             <br/>
                             <div className="btn-enviar" id="bEnviar" onClick={sendData}>

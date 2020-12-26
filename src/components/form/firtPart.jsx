@@ -1,12 +1,21 @@
-import React from 'react'
+import React, {useRef} from 'react'
 
-function FirtPart({setTitle, setDescription}){
+function FirtPart({setTitle, setDescription, setPrice}){
+
+    let inputTitleRef = useRef(null)
+    let inputDescriptionRef = useRef(null)
+    let inputPriceRef = useRef(null)
+
 
     function saveTitle(){
-        setTitle(document.getElementById('inputTitle').value)
+        setTitle(inputTitleRef.current.value)
     }
     function saveDescription(){
-        setDescription(document.getElementById('inputDescription').value)
+        setDescription(inputDescriptionRef.current.value)
+    }
+
+    function savePrice(){
+        setPrice(inputPriceRef.current.value)
     }
 
     return(
@@ -28,15 +37,25 @@ function FirtPart({setTitle, setDescription}){
                 <br/>
                 <br/>
                 <label>
+                    <p>
                     Ingrese Un Titulo:
+                    </p>
                     <br/>
-                    <input type="text" id="inputTitle" placeholder="ingrese Titulo" onBlur={saveTitle}/>
+                    <input ref={inputTitleRef} type="text" id="inputTitle" placeholder="ingrese Titulo" onBlur={saveTitle}/>
                 </label>
                 <br/>
                 <br/>
                 <label className="labelDescription">                        
                     Ingrese Una Descripción: 
-                    <textarea  id="inputDescription" className="description" placeholder="ingrese descripción" onBlur={saveDescription}></textarea>
+                    <textarea  ref={inputDescriptionRef} id="inputDescription" className="description" placeholder="ingrese descripción" onBlur={saveDescription}></textarea>
+                </label>
+                <br/>
+                <label>
+                    <p>
+                    Ingrese El Precio:
+                    </p>
+                    <br/>
+                    <input ref={inputPriceRef} type="text" id="inputPrice" placeholder="ingrese el precio" onBlur={savePrice}/>
                 </label>
             </div>
         </>
