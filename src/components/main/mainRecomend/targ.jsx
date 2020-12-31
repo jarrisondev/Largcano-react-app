@@ -1,17 +1,10 @@
 import React from 'react'
 
 function Targ ({url, price, element1, element2, place, date, id, setTargId, setChekedDialog}){  
-    
-    function setTargID(){
-        setTargId(id-1)
-    }
-    function setDialogCheked(){
-        setChekedDialog(true)
-    }
 
     return(
-        <div className="targ" id="targ_1" onClick={setTargID}>
-            <div className="targ__targ" onClick={setDialogCheked}>
+        <div className="targ" id="targ_1" onClick={()=> setTargId(id-1)}>
+            <div className="targ__targ" onClick={()=>setChekedDialog(true)}>
                 <figure className="r_targ__img">
                     <img src= {url}  alt="Targeta"/>
                 </figure>

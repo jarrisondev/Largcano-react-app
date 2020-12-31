@@ -1,5 +1,4 @@
 
-
 function SubFooter (){
     return( 
         <div className="footer__subfooter">
@@ -18,10 +17,10 @@ function SubFooter (){
             <br/>
             <div className="subfooter__seguinos">
                 <h6>Seguinos</h6>
-                <a href="https://www.facebook.com/danielmateo.largoroldan" target="_blank" rel="noreferrer">
-                    <img src="./img/Redes/facebook.png" alt="Facebook"/>
+                <a href="https://twitter.com/JarrisonCano" target="_blank" rel="noreferrer">
+                    <img src="./img/Redes/twitter.png" alt="Twitter"/>
                 </a>
-                <a href="https://www.instagram.com/mateolargo_r/" target="_blank" rel="noreferrer">
+                <a href="https://www.instagram.com/jarrisoncanom/" target="_blank" rel="noreferrer">
                     <img src="./img/Redes/instagram.png" alt="Instagram"/>
                 </a>
             </div>

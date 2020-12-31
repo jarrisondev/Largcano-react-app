@@ -4,8 +4,6 @@ import {targInf} from '../../targInf.json'
 
 function MainRecomend ({setTargId, setChekedDialog}) {
 
-    
-
     return(
         <>
             <section className="main__recomend" id="main__recomend">
