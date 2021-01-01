@@ -6,6 +6,12 @@ import {targInf} from '../targInf.json'
 function Form ({setCheckedForm}){
     let date = new Date()
     let [checkedDialogForm, setCheckedDialogForm] = useState(false)
+    let [checkedSecondPart, setCheckedSecondPart] = useState(false)
+    let [checkedFirtPart, setCheckedFirtPart] = useState(false)
+
+    let [selectValue, setSelectValue] = useState('Vehiculo')
+
+    let [checkedImg, setCheckedImg] = useState(false)
 
     let months = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEPT','OCT','NOV','DIC']
     //dates for the new target
@@ -17,33 +23,32 @@ function Form ({setCheckedForm}){
     let [c3, setC3] = useState("")
     let [place, setPlace] = useState("")
     let [price, setPrice] = useState("")
-
-    let [selectValue, setSelectValue] = useState('Vehiculo')
-
-    let [checkedFirtPart, setCheckedFirtPart] = useState(false)
-    let [checkedSecondPart, setCheckedSecondPart] = useState(false)
     
     let img = useRef("")
 
     function saveImg(){
+        checkImg()
         const reader = new FileReader()
 
         reader.addEventListener('load', ()=>{
             localStorage.setItem(cont, reader.result)
             setCont(cont+1)
         })
-        console.log(img)
         reader.readAsDataURL(img.current.files[0])
     }
-
     function sendData() {
-        if(checkedFirtPart && checkedSecondPart){
+        if(checkedFirtPart && checkedSecondPart && checkedImg){
             targInf.push(data) 
             setCheckedForm(false)
         }else{
             setCheckedDialogForm(true)
         }
     }
+    function checkImg(){
+       if(img.current.files.length===1) setCheckedImg(true)
+       else setCheckedImg(false)
+    }
+
     // object with save the data for push to the targInf
     let data = {
         "id": (targInf.length + 1),
