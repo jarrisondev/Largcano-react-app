@@ -33,7 +33,6 @@ main{
             display: flex;
             justify-content: center;
             margin-right: 2%;
-            cursor:pointer;
 
             img{
                 width: 60%;
@@ -64,11 +63,10 @@ main{
                 cursor:pointer;
                 
                 .targ__targ{
-                    color: rgb(233, 233, 233);
+                    color: $card-color;
                     height: 100%;
-                    background-color: rgb(10, 10, 10);
+                    background: $card-background;
                     border-radius: 10px 10px 5px 5px;
-                    // border: .1px solid rgb(245, 222, 255);
                     font-weight: 300;
 
                     figure{
@@ -79,15 +77,14 @@ main{
                             width: 100%;
                             height: 100%;
                             border-radius: 10px 10px 0 0;
-                            // border: .1px solid rgb(245, 222, 255);
-                            filter: saturate(1.5);
+                            filter: saturate(1.3);
                         }
                     }
 
                     &:hover{
-                        background-color:rgb(15, 15, 15);
+                        background-color:$card-background-hover;
                         border-radius: 10px;
-                        border: .05px solid rgb(144, 40, 9);
+                        border: .05px solid rgb(255, 108, 23);
 
                     }
 
@@ -162,9 +159,8 @@ main{
             .recomend__targ{
                 display: grid;
                 grid-template-columns: 1fr;
-                width: 75%;
-                margin: auto;
-        
+                width: 100%;  
+                justify-items: center;
             }    
         }
     }

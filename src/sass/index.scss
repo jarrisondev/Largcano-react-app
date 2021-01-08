@@ -1,6 +1,6 @@
 ::-webkit-scrollbar{
     width:5px;
-    background: rgb(0, 0, 0);
+    background: none;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -13,13 +13,56 @@
     margin: 0;
 }
 
-body{
+.ligth__mode{
+    color:black;
+    background-color:white;
+    
+    $dialog-background:white;
+    $content-background:rgb(255, 191, 108);
+    $content-color:white;
+
+    $background:white;
+    $labelCheck-color: url(./img/theme/light.svg);
+    
+    $card-background: linear-gradient( #ffbb8e 0%, #EB7208 100%);
+    $card-background-hover: rgb(255, 175, 129);
+    $card-color:white;
+    
+    $subFooter-background:rgb(15, 12, 19);
+
+    @import "components/dialog";
+    @import "components/header";
+    @import "components/main";
+    @import "components/footer";
+}
+
+.dark__mode{
     color:white;
     background-color: black;
+
+    $dialog-background:url(./img/fondo/2.png);
+    $content-background: rgb(3, 3, 3);
+    $content-color:white;
+
+    $background:black;
+    $labelCheck-color: url(./img/theme/dark.svg);
+
+    $card-background: rgb(10, 10, 10);
+    $card-background-hover:rgb(5, 5, 5);
+    $card-color:rgb(226, 226, 226);
+
+    $subFooter-background:rgb(255, 121, 32);
+    
+    @import "components/dialog";
+    @import "components/header";
+    @import "components/main";
+    @import "components/footer";
 }
+
 .overflow{
     overflow: hidden;
 }
+
 .container{
     width: 92%;
     margin: 0 auto;
@@ -29,8 +72,16 @@ body{
     user-select: none;
 }
 
-@import "components/dialog";
-@import "components/header";
-@import "components/main";
-@import "components/footer";
+.banner{
+    width: 100%;
+    margin-bottom: 5%;
+
+    img{
+        display: block;
+        width: 100%;
+        height: 95%;
+        border-radius: 0 0 10px 10px;
+    }
+}
+
 @import "components/form";

@@ -1,6 +1,6 @@
 .dialog{
     position: fixed;
-    background-image: url(./img/fondo/2.png);
+    background:$dialog-background;
     background-size: cover;
     width: 100vw;
     min-height: 100%;
@@ -11,8 +11,8 @@
     z-index: 100;
     
     .dialog__container{
-        color: white;
-        background-color:rgb(3, 3, 3);
+        color:$content-color;
+        background:$content-background;
         width: 80%;
         height: 500px;
         display: flex;
@@ -95,7 +95,6 @@
 
     @media (max-width:550px){
         background-image: none;
-        background-color: rgb(3, 3, 3);           
         height: 100vh;
         flex-wrap: wrap;
 
@@ -117,7 +116,7 @@
                 width: 100%;
 
                 img{
-                    border-radius: 20px 20px 0 0; 
+                    //border-radius: 20px 20px 0 0; 
                 }
             }
 

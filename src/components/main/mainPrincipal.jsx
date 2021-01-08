@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 function MainPrincipal() {
 
-    let imagesMain = ["./img/main/2.svg", "./img/main/3.svg", "./img/main/1.svg"]
     let indiceMain = 0
-
+    
     function changeImageMain(){
+        let imagesMain = ["./img/main/2.svg", "./img/main/3.svg", "./img/main/1.svg"]
+        
         document.sliderMain.src = imagesMain[indiceMain]
 
         if(indiceMain < 2) indiceMain++
         else indiceMain = 0
     }
+
+    useEffect(()=>{
+        const interval = setInterval(changeImageMain, 3000);
+        return(()=>{
+            clearInterval(interval)
+        })
+
+    })
 
     return(
         <>
@@ -25,7 +34,7 @@ function MainPrincipal() {
             </div>
             <br/>
             <div className="principal__image">
-                <img name="sliderMain" src="./img/main/1.svg" onClick={changeImageMain} alt=""/>
+                <img name="sliderMain" src="./img/main/1.svg" alt="principal"/>
             </div>
         </section>
         </>

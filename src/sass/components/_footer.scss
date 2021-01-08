@@ -1,8 +1,9 @@
 footer{
     margin-top: 7%;
-    background-color: rgb(180, 87, 24);
-
+    
     .footer__subfooter{
+        background-color: $subFooter-background;
+        color: white;
         font-size: 1.05rem;
         display: flex;
         justify-content: space-evenly;
@@ -32,8 +33,6 @@ footer{
     }
 
     .footer__inf_final{
-        background-color: black;
-        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -42,7 +41,6 @@ footer{
         .inf_final__derechos_autor{
             p{
                 font-weight: 700;
-                // padding-right: 1%;
             }
         }
     }

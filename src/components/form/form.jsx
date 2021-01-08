@@ -24,7 +24,8 @@ function Form ({setCheckedForm}){
     let [place, setPlace] = useState("")
     let [price, setPrice] = useState("")
     
-    let img = useRef("")
+    let img = useRef(null)
+    let dialogForm = useRef(null)
 
     function saveImg(){
         checkImg()
@@ -65,18 +66,18 @@ function Form ({setCheckedForm}){
 
     useEffect(()=>{
         if(checkedDialogForm){
-            document.getElementById('dialogForm').classList.add('startForm')
+            dialogForm.current.classList.add('startForm')
             document.body.classList.add('overflow')
         }else{
-            document.getElementById('dialogForm').classList.remove('startForm')
+            dialogForm.current.classList.remove('startForm')
             document.body.classList.remove('overflow')
         }
     })
 
     return(
         <>
-            <dialog className="dialogForm" id="dialogForm">
-                <div className="dialogForm__modal">
+            <dialog className="dialogModel" ref={dialogForm}>
+                <div className="dialogModel__modal">
                     <p className="modal__text">Rellene los Campos Correctamente</p>
                     <p className="modal__buttom" id="modal__buttom" onClick={()=> setCheckedDialogForm(false)}>Aceptar</p>
                 </div>
