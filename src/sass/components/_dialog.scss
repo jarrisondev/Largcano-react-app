@@ -12,7 +12,7 @@
     
     .dialog__container{
         color:$content-color;
-        background:$content-background;
+        background:rgb(3, 3, 3);
         width: 80%;
         height: 500px;
         display: flex;
@@ -43,7 +43,7 @@
             .price{
                 font-size: 1.2rem;
                 font-weight: 700;
-                color: rgb(255, 145, 0);
+                color: $price-color;
                 margin: 4% 0 0 0;
             }
             
@@ -94,7 +94,6 @@
     }
 
     @media (max-width:550px){
-        background-image: none;
         height: 100vh;
         flex-wrap: wrap;
 
@@ -110,13 +109,13 @@
             margin: auto;
             height: 87vh;
             flex-wrap: wrap;
-            border-radius: 0;
+            border-radius:20px;
 
             .container__img{
                 width: 100%;
-
+                
                 img{
-                    //border-radius: 20px 20px 0 0; 
+                    border-radius: 20px 20px 0 0; 
                 }
             }
 

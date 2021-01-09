@@ -17,9 +17,9 @@
     color:black;
     background-color:white;
     
-    $dialog-background:white;
-    $content-background:rgb(255, 191, 108);
-    $content-color:white;
+    $dialog-background:linear-gradient( #ffa970 0%, #e67f26 100%);
+    $content-color:white; 
+    $price-color:rgb(255, 51, 0);
 
     $background:white;
     $labelCheck-color: url(./img/theme/light.svg);
@@ -41,8 +41,8 @@
     background-color: black;
 
     $dialog-background:url(./img/fondo/2.png);
-    $content-background: rgb(3, 3, 3);
     $content-color:white;
+    $price-color:rgb(255, 145, 0);
 
     $background:black;
     $labelCheck-color: url(./img/theme/dark.svg);
