@@ -41,8 +41,9 @@
                 transform: translateX(0);
             }
         }
-
+        
         .header__publicar_check_checkLabel{
+            margin-right:5%;
             height: 22%;
             display: block;
             border-radius: 20px;
@@ -52,9 +53,7 @@
             width: 7%;
             padding: .5%;
             cursor: pointer;
-            user-select: none;
-            margin-right: 8%;
-            
+            user-select: none;            
         
             &::before{
             content:'';
@@ -78,7 +77,6 @@
             color:white;
             font-size:0.9rem;
             cursor: pointer;
-            margin-right: 8%;
 
             &:hover{
                 background-color: rgb(177, 65, 0);

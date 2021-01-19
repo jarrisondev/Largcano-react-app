@@ -3,8 +3,9 @@ import React from 'react'
 function Targ ({url, price, element1, element2, place, date, id, setTargId, setChekedDialog}){  
 
     return(
-        <div className="targ" id="targ_1" onClick={()=> setTargId(id-1)}>
-            <div className="targ__targ" onClick={()=>setChekedDialog(true)}>
+            <div className="targ__targ" onClick={()=>{setChekedDialog(true)
+                                                        setTargId(id-1)
+                                                    }}>
                 <figure className="r_targ__img">
                     <img src= {url}  alt="Targeta"/>
                 </figure>
@@ -16,14 +17,13 @@ function Targ ({url, price, element1, element2, place, date, id, setTargId, setC
                     <p>{element2}</p>
                 </div>
                 <br/>
-                <div className="r_targ__title">
+                <div className="r_targ__place">
                     <p>{place}</p>
                 </div>
                 <div className="r_targ__date">
                     <p>{date}</p>
                 </div>
             </div>
-        </div>
     )
 }
 

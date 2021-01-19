@@ -45,7 +45,7 @@
             "property":"<ul><li>Cpu: x86-64 AMD Ryzen</li><li>8 núcleos</li><li>16 gb de memoria</li><li>Tecnología HDR</li></ul>",
             "date": "HACE 3 HORAS",
             "place":"Bogotá, Colombia.",
-            "element1":"CPU X86-64-AMD Ryzen con 8 núcleos. 16gb de memoria",
+            "element1":"CPU X86-64-AMD Ryzen con 8 núcleos.",
             "element2":""
         },
         {
@@ -86,6 +86,30 @@
         },
         {
             "id":8,
+            "urlImage":"./img/recomend/8.jpg",
+            "title": "DRONE PHANTON III PRO 4K",
+            "price": "COP 978,208",
+            "description": "Drone Phantom III profesional DJI, maleta rígida portable, 2 baterías de litio, elices funcionales, recién salido de calibración.",
+            "property":"<ul><li>Camara: 4k 30fps</li><br><li>Tiempo vuelo: 30min</li><br><li>Ambiente: rural, ciudad(con licencia)</li></ul>",
+            "date": "HACE 1 DÍA",
+            "place":"Sabaneta, Antioquia",
+            "element1":"Drone Phamton III PRO 4k Cámara 4k, 30min de vuelo",
+            "element2":""
+        },
+        {
+            "id":9,
+            "urlImage":"./img/recomend/8.jpg",
+            "title": "DRONE PHANTON III PRO 4K",
+            "price": "COP 978,208",
+            "description": "Drone Phantom III profesional DJI, maleta rígida portable, 2 baterías de litio, elices funcionales, recién salido de calibración.",
+            "property":"<ul><li>Camara: 4k 30fps</li><br><li>Tiempo vuelo: 30min</li><br><li>Ambiente: rural, ciudad(con licencia)</li></ul>",
+            "date": "HACE 1 DÍA",
+            "place":"Sabaneta, Antioquia",
+            "element1":"Drone Phamton III PRO 4k Cámara 4k, 30min de vuelo",
+            "element2":""
+        },
+        {
+            "id":10,
             "urlImage":"./img/recomend/8.jpg",
             "title": "DRONE PHANTON III PRO 4K",
             "price": "COP 978,208",

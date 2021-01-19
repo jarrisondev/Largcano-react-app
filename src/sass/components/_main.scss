@@ -4,24 +4,24 @@ main{
 
     .main__principal{
         width: 100%;
-        min-height:80vh;
+        margin-top: 8%;
         display:flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        padding-left: 2%;
         
         .principal__boxText{
             width: 50%;
 
             .boxText__title{
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                font-weight: 700;
                 margin: 0% 0% 5% 2%;
                 color:rgb(255, 95, 37);
             }
 
             .boxText__description{
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 text-align: justify;
                 width: 75%;
                 margin-left:5%;
@@ -29,14 +29,15 @@ main{
         }
 
         .principal__image{
-            width: 500px;
+            width: 250px;
+            min-height: 100%;
             display: flex;
             justify-content: center;
-            margin-right: 2%;
+            margin-right:3%;
 
             img{
-                width: 60%;
-                height:100%;
+                width: 100%;
+                min-height:100%;
             }
         }
     }
@@ -44,75 +45,74 @@ main{
     .main__recomend{
 
         .recomend__text{
-            font-size:1.5rem;
-            margin: 0 0 6% 3%;
+            font-size:2rem;
+            font-weight: 700;
+            color:rgb(255, 95, 37);
+            text-align: center;
+            margin: 10% 0 10%;
         }
 
         .recomend__targ{
+            width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            width: 85%;
-            margin: auto;
-
-            .targ{
-                width: 220px;
-                height: 300px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;            
+            
+            .targ__targ{
+                width: 200px;
+                height: 280px;
+                margin: auto;
+                color: $card-color;
+                background: $card-background;
+                font-size: .9rem;
+                font-weight: 300;
+                border-radius: 10px 10px 5px 5px;
+                margin-bottom: 15%;
                 text-decoration: none;
-                color: black;
-                margin: 5% 5% 10% 5%;
                 cursor:pointer;
-                
-                .targ__targ{
-                    color: $card-color;
-                    height: 100%;
-                    background: $card-background;
-                    border-radius: 10px 10px 5px 5px;
-                    font-weight: 300;
 
-                    figure{
-                        width: 100%;
-                        height: 56%;
-                        
-                        img{
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 10px 10px 0 0;
-                            filter: saturate(1.3);
-                        }
-                    }
-
-                    &:hover{
-                        background-color:$card-background-hover;
-                        border-radius: 10px;
-                        border: .05px solid rgb(255, 108, 23);
-
-                    }
-
-                    .r_targ__price{
-                        margin-top: 3%;
-                        padding-left: 2%;
-                        font-weight: 700;
-                        font-size: 1.3rem;
-                    }
-                    .r_targ__elements{
-                        margin-top: 3%;
-                        padding: 2% 0 1% 0;
-                        font-size: .96rem;
-                        
-                        p{
-                            padding-left: 2%;
-                        }
-                    }
+                figure{
+                    width: 100%;
+                    height: 56%;
                     
-                    .r_targ__title{
-                        padding-left: 2%;
-                        font-weight: 500;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px 10px 0 0;
+                        filter: saturate(1.3);
                     }
-                    .r_targ__date{
+                }
+
+                &:hover{
+                    background-color:$card-background-hover;
+                    border-radius: 10px;
+                    border: .05px solid rgb(255, 108, 23);
+
+                }
+
+                .r_targ__price{
+                    margin-top: 3%;
+                    padding-left: 2%;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                }
+                .r_targ__elements{
+                    margin-top: 3%;
+                    padding: 2% 0 1% 0;
+                    font-size: .90rem;
+                    
+                    p{
                         padding-left: 2%;
-                        margin-bottom:1%;
-                        font-weight: 500;
                     }
+                }
+                
+                .r_targ__place{
+                    padding-left: 2%;
+                    font-weight: 500;
+                }
+                .r_targ__date{
+                    padding-left: 2%;
+                    margin-bottom:1%;
+                    font-weight: 500;
                 }
             }
         }
