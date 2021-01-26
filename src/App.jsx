@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Dialog from './components/dialog/dialog.jsx'
-import Banner from './components/banner.jsx'
 import Header from './components/header/header.jsx'
 import Main from './components/main/main.jsx'
 import Footer from './components/footer/footer.jsx'
@@ -46,9 +45,8 @@ function App() {
   return (
     <div ref={containerRef} className="container" id="container">
         <Dialog setDialogRef={setDialogRef} targId={targId} setChekedDialog={setChekedDialog} setTargId={setTargId}/>
-        <Banner />
         <Header setCheckedForm={setCheckedForm} setCheckedMode={setCheckedMode} chekedDialog={chekedDialog} checkedForm={checkedForm} />
-        {checkedForm ? <Form  setCheckedForm={setCheckedForm} /> : <Main setTargId={setTargId} setChekedDialog={setChekedDialog}/> }
+        {checkedForm ? <Form  setCheckedForm={setCheckedForm} /> : <Main setTargId={setTargId} setChekedDialog={setChekedDialog} setCheckedForm={setCheckedForm} /> }
         <Footer />
       </div>
   );

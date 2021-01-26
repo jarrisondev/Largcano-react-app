@@ -18,10 +18,10 @@ function SubFooter (){
             <div className="subfooter__seguinos">
                 <h6>Seguinos</h6>
                 <a href="https://twitter.com/JarrisonCano" target="_blank" rel="noreferrer">
-                    <img src="./img/Redes/twitter.png" alt="Twitter"/>
+                    <i className="fab fa-twitter"></i>
                 </a>
                 <a href="https://www.instagram.com/jarrisoncanom/" target="_blank" rel="noreferrer">
-                    <img src="./img/Redes/instagram.png" alt="Instagram"/>
+                    <i className="fab fa-instagram"></i>
                 </a>
             </div>
         </div>

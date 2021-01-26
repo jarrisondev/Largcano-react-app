@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     position: sticky;
     background-color: $background;
+    // background-color: rgb(255, 115, 115);
     top: 0;
     z-index: 100;
 
@@ -10,12 +11,11 @@
         display: flex;
         align-items: center;
         width: 20%;
-        margin: 1%;
         padding:1%;
         border-radius: 10px;
         
         img{
-            width: 25%;
+            width: 20%;
         }
         h1{
             display: inline;
@@ -44,13 +44,13 @@
         
         .header__publicar_check_checkLabel{
             margin-right:5%;
-            height: 22%;
+            height: 26%;
             display: block;
             border-radius: 20px;
             background: $labelCheck-color;
-            border: 1px solid rgb(255, 116, 2);
+            border: 1px solid #ff5f25;
             background-size: cover;
-            width: 7%;
+            width: 6%;
             padding: .5%;
             cursor: pointer;
             user-select: none;            
@@ -66,22 +66,6 @@
             transition: .3s;
             }
         }
-
-
-        .header__publicar_check__publicar{
-            padding: 1% 2%;
-            border: 0;
-            outline: none;
-            background-color: rgb(236, 99, 20);
-            border-radius: 10px;
-            color:white;
-            font-size:0.9rem;
-            cursor: pointer;
-
-            &:hover{
-                background-color: rgb(177, 65, 0);
-            }
-        }
     }
 
     @media (max-width:550px){
@@ -92,10 +76,6 @@
                 width: 12%;
                 height: 30%;
                 margin-right: 3%;
-            }
-
-            .header__publicar_check__publicar{
-                margin:0;
             }
         }
     }

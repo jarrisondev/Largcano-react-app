@@ -3,7 +3,7 @@
     background:$dialog-background;
     background-size: cover;
     width: 100vw;
-    min-height: 100%;
+    height: 100vh;
     display: none;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,8 @@
         color:$content-color;
         background:rgb(3, 3, 3);
         width: 80%;
-        height: 500px;
+        height: 450px;
+        max-height: 450px;
         display: flex;
         border-radius: 5px;
 
@@ -30,58 +31,60 @@
 
         .container__inf{
             width: 59%;
-            font-size: .9rem;
             margin: 3% 0 7.6% 6%;
+            height: 85%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
             h3{
-                font-size: 1.7rem;
+                font-size: 2vw;
             }
 
             .price{
-                font-size: 1.2rem;
+                font-size: 1.5vw;
                 font-weight: 700;
                 color: $price-color;
-                margin: 4% 0 0 0;
             }
             
             .description{
                 width: 70%;
-                font-size: 1.1rem;
-                margin: 4% 0 1% 0;
+                font-size: 1.2vw;
             }
             
             .property{
-                font-size: 1.1rem;
-                margin: 4% 0 0 4%;
+                font-size: 1.3vw;
+                margin: 0 0 0 4%;
             }
 
-            .buy{
-                margin-top: 10%;
-                padding: 15px 15px;
-                width: 22%;
-                max-height: 50px;
-                background-color: rgb(223, 79, 12);
-                font-size: 1.3rem;
-                font-weight: 600;
-                border-radius: 8px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
+            .container__buy{
                 
-                &:hover{
-                    background-color: rgb(184, 65, 10);
+                .buy__buttom{
+                    padding: 1vw;
+                    width: 9vw;
+                    max-height: 3vh;
+                    background:linear-gradient(#ff4c2d 50%,#ff5015 100%);
+                    font-size: 1.5vw;
+                    font-weight: 600;
+                    border-radius: 1.5vw;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    
+                    &:hover{
+                    background:linear-gradient(#ff3f3f 50%, #ff5815 100%);
+
+                    }  
                 }  
-            }  
+            }
         }
+
     }
     
     .exit{
         color:rgb(195, 195, 195);
-        font-size: 2rem;
+        font-size: 2.5vw;
         position: fixed;
         top: 0;
         right: 0;
@@ -99,6 +102,7 @@
 
         .fa-arrow-left { 
             position: fixed;
+            font-size: 1.4rem;
             bottom: 0;
             left: 0;
             margin: 0 0 4% 7%;
@@ -121,28 +125,48 @@
 
             .container__inf{
                 width: 100%;
+                height:auto;
                 margin: 3% 0 6% 6%;
 
                 h3{
                     font-size: 1.6rem;
                 }
+                
+                .price{
+                    font-size: 1.2rem;
+                }
 
                 .description{
                     width: 95%;
+                    font-size: 1rem;
                 }
 
-                .buy{
-                    margin-top: 8%;
-                    width: 35%;
+                .property{
+                    font-size: 1.2rem;
+                }
+
+                .container__buy{
+                    .buy__buttom{
+                        font-size: 1.1rem;
+                        width: 30%;
+                        height: 35px;
+                        padding: 5px;
+                        border-radius: 5px;
+                    }
                 }
             }
         }
 
         .fa-arrow-right {
             position: fixed;
+            font-size: 1.4rem;
             bottom: 0;
             right: 0;
             margin: 0 7% 4% 0;
+        }
+
+        .exit{
+            font-size:1.5rem;
         }
     }
 }
@@ -153,7 +177,7 @@
 
 .arrow{
     color: rgb(202, 202, 202);
-    font-size: 30px;
+    font-size: 2.3vw;
     cursor: pointer;
 
     &:hover{
@@ -161,9 +185,9 @@
     }
 
     &:nth-of-type(1){
-        margin-right:80px;
+        margin-right:5vw;
     }
     &:nth-of-type(2){
-        margin-left: 80px;
+        margin-left: 5vw;
     }
 }

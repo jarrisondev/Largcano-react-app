@@ -2,7 +2,7 @@ footer{
     margin-top: 7%;
     
     .footer__subfooter{
-        background-color: $subFooter-background;
+        background: $subFooter-background;
         color: white;
         font-size: 1.05rem;
         display: flex;
@@ -24,9 +24,12 @@ footer{
             
             a{
                 text-decoration: none;
-
-                img{
-                    width: 30px;
+                
+                i{
+                    text-decoration: none;
+                    width: 50px;
+                    font-size: 1.9rem;
+                    color:white;
                 }
             }
         }

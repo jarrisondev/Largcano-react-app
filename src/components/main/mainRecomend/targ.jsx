@@ -10,7 +10,7 @@ function Targ ({url, price, element1, element2, place, date, id, setTargId, setC
                     <img src= {url}  alt="Targeta"/>
                 </figure>
                 <div className="r_targ__price">
-                    <p id="precio">{price}</p>
+                    <p>{price}</p>
                 </div>
                 <div className="r_targ__elements">
                     <p>{element1}</p>

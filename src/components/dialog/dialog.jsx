@@ -44,7 +44,9 @@ function Dialog({targId, setChekedDialog, setTargId, setDialogRef}){
                         <p className="price">{targInf[targId].price}</p>
                         <p className="description">{targInf[targId].description}</p>
                         <p ref={propertyRef} className="property"></p>
-                        <p className="buy" onClick={()=> setCheckedDialogBuy(true)}>Comprar <i className="fas fa-shopping-cart"></i></p>
+                        <div className="container__buy">
+                            <p className="buy__buttom" onClick={()=> setCheckedDialogBuy(true)}>Comprar <i className="fas fa-shopping-cart"></i></p>
+                        </div>
                     </div>
                 </div>
                 <p><i className="fas fa-times exit"  onClick={()=>setChekedDialog(false)}></i></p>

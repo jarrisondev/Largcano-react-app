@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 
-function MainPrincipal() {
+function MainPrincipal({setCheckedForm}) {
 
     let indiceMain = 0
     
@@ -31,6 +31,8 @@ function MainPrincipal() {
                 <p className="boxText__description">
                     Bienvenidos a LargCano, lider en anuncios clasificados, ecuentras desde Vehiculos, hogares, vestimentas, asccesorios, tecnología, hasta juguetes. <br/> Busca, compra y vente cerca de ti. 
                 </p>
+                <br/>
+                <button className="button__publicar boxText__button" onClick={()=>setCheckedForm(true)}>Publica un articulo</button>
             </div>
             <br/>
             <div className="principal__image">
