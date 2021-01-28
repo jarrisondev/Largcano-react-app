@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import Button from '../button/button'
 
 function MainPrincipal({setCheckedForm}) {
 
@@ -18,7 +19,6 @@ function MainPrincipal({setCheckedForm}) {
         return(()=>{
             clearInterval(interval)
         })
-
     })
 
     return(
@@ -32,7 +32,7 @@ function MainPrincipal({setCheckedForm}) {
                     Bienvenidos a LargCano, lider en anuncios clasificados, ecuentras desde Vehiculos, hogares, vestimentas, asccesorios, tecnología, hasta juguetes. <br/> Busca, compra y vente cerca de ti. 
                 </p>
                 <br/>
-                <button className="button__publicar boxText__button" onClick={()=>setCheckedForm(true)}>Publica un articulo</button>
+                < Button classes="boxText__button" on={setCheckedForm} content="Publica un articulo" boolean={true}/>
             </div>
             <br/>
             <div className="principal__image">

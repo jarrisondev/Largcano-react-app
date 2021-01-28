@@ -1,11 +1,13 @@
-import React, {useState, useRef, useEffect } from 'react'
+import React, {useState, useRef } from 'react'
 import FirtPart from './firtPart.jsx'
 import SecondPart from "./secondPart.jsx"
+import Button from '../button/button'
+import ModalBox from '../modal box/modalBox'
 import {targInf} from '../targInf.json'
 
 function Form ({setCheckedForm}){
     let date = new Date()
-    let [checkedDialogForm, setCheckedDialogForm] = useState(false)
+    let [checkedModalBox, setCheckedModalBox] = useState(false)
     let [checkedSecondPart, setCheckedSecondPart] = useState(false)
     let [checkedFirtPart, setCheckedFirtPart] = useState(false)
 
@@ -25,7 +27,6 @@ function Form ({setCheckedForm}){
     let [price, setPrice] = useState("")
     
     let img = useRef(null)
-    let dialogForm = useRef(null)
 
     function saveImg(){
         checkImg()
@@ -42,7 +43,7 @@ function Form ({setCheckedForm}){
             targInf.push(data) 
             setCheckedForm(false)
         }else{
-            setCheckedDialogForm(true)
+            setCheckedModalBox(true)
         }
     }
     function checkImg(){
@@ -64,26 +65,11 @@ function Form ({setCheckedForm}){
         "element2":""
     }
 
-    useEffect(()=>{
-        if(checkedDialogForm){
-            dialogForm.current.classList.add('startForm')
-            document.body.classList.add('overflow')
-        }else{
-            dialogForm.current.classList.remove('startForm')
-            document.body.classList.remove('overflow')
-        }
-    })
-
     return(
         <>
-            <dialog className="dialogModel" ref={dialogForm}>
-                <div className="dialogModel__modal">
-                    <p className="modal__text">Rellene los Campos Correctamente</p>
-                    <p className="modal__buttom" id="modal__buttom" onClick={()=> setCheckedDialogForm(false)}>Aceptar</p>
-                </div>
-            </dialog>
+            <ModalBox flag={checkedModalBox} content="Rellene los Campos Correctamente" on={setCheckedModalBox}/>
             <section className="main__recomend" id="main_recomend">
-                <form>
+                <form method="get">
                     <div className="containerForm">
                         <h1 className="titleForm">Publicar Producto</h1>
                         <div className="form">
@@ -97,9 +83,7 @@ function Form ({setCheckedForm}){
                                 <input ref={img} type="file" id="file" onChange={saveImg}/>
                             </div>
                             <br/>
-                            <div className="btn-enviar" id="bEnviar" onClick={sendData}>
-                                <p className="submit" id="submit">Publicar</p>
-                            </div>
+                            <Button classes="btn-enviar" on={sendData} content="Publicar" boolean={true}/>
                         </div>
                     </div>
                 </form>

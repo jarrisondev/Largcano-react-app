@@ -43,7 +43,7 @@ function App() {
   },[checkedMode])
   
   return (
-    <div ref={containerRef} className="container" id="container">
+    <div ref={containerRef} className="container">
         <Dialog setDialogRef={setDialogRef} targId={targId} setChekedDialog={setChekedDialog} setTargId={setTargId}/>
         <Header setCheckedForm={setCheckedForm} setCheckedMode={setCheckedMode} chekedDialog={chekedDialog} checkedForm={checkedForm} />
         {checkedForm ? <Form  setCheckedForm={setCheckedForm} /> : <Main setTargId={setTargId} setChekedDialog={setChekedDialog} setCheckedForm={setCheckedForm} /> }

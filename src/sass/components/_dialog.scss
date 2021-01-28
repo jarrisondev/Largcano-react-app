@@ -61,12 +61,12 @@
                 
                 .buy__buttom{
                     padding: 1vw;
-                    width: 9vw;
+                    width: 9.2vw;
                     max-height: 3vh;
-                    background:linear-gradient(#ff4c2d 50%,#ff5015 100%);
+                    background:linear-gradient(#ff4a2a 50%, rgb(255, 52, 37) 100%);
                     font-size: 1.5vw;
                     font-weight: 600;
-                    border-radius: 1.5vw;
+                    border-radius: 1vw;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -76,6 +76,13 @@
                     background:linear-gradient(#ff3f3f 50%, #ff5815 100%);
 
                     }  
+
+                    .fa-shopping-cart{
+                        background:#ffbfaa44 ;
+                        padding:.6vw;
+                        margin-left: .7vw;
+                        border-radius: .8vw;
+                    }
                 }  
             }
         }

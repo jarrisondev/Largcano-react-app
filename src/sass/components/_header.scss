@@ -34,15 +34,15 @@
         justify-content: flex-end;
 
 
-        .header__publicar_check__check{
+        .publicar_check__check{
             display: none;
 
-            &:checked ~ .header__publicar_check_checkLabel:before{
+            &:checked ~ .publicar_check__checkLabel:before{
                 transform: translateX(0);
             }
         }
         
-        .header__publicar_check_checkLabel{
+        .publicar_check__checkLabel{
             margin-right:5%;
             height: 26%;
             display: block;
@@ -69,14 +69,26 @@
     }
 
     @media (max-width:550px){
+        height: 6vh;
+
+        .header__logo{
+            h1{
+                font-size:7vw;
+            }
+        }
 
         .header__publicar_check{
 
-            .header__publicar_check_checkLabel{
-                width: 12%;
-                height: 30%;
+            .publicar_check__checkLabel{
+                width: 10.5vw;
+                height: 2.3vh;
                 margin-right: 3%;
             }
+
+            .publicar_check__publicar{
+                height: 3vh;
+            }
         }
+
     }
 }

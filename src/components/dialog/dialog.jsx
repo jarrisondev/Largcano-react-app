@@ -1,11 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react'
+import ModalBox from '../modal box/modalBox'
 import {targInf} from '../targInf.json'
 
 function Dialog({targId, setChekedDialog, setTargId, setDialogRef}){
 
     let [checkedDialogBuy, setCheckedDialogBuy] = useState(false)
     let dialogRef = useRef(null)
-    let dialogBuy = useRef(null)
     let propertyRef = useRef(null)
 
     function clickSig(){
@@ -19,20 +19,13 @@ function Dialog({targId, setChekedDialog, setTargId, setDialogRef}){
 
     useEffect(()=>{
         propertyRef.current.innerHTML=targInf[targId].property
-        if(checkedDialogBuy) dialogBuy.current.classList.add('startForm')
-        else dialogBuy.current.classList.remove('startForm')
     })
 
     return(
         <>
            <dialog id="dialog" className="dialog" ref={dialogRef} onLoad={()=>{setDialogRef(dialogRef)}}>
-                
-                <dialog ref={dialogBuy} className="dialogModel">
-                    <div className="dialogModel__modal">
-                        <p className="modal__text">Feacture in progress...</p>
-                        <p className="modal__buttom" onClick={()=> setCheckedDialogBuy(false)}>Aceptar</p>
-                    </div>
-                </dialog>
+
+                <ModalBox flag={checkedDialogBuy} content="En progreso" on={setCheckedDialogBuy}/>
 
                 <i className="fas fa-arrow-left arrow" id="ant" onClick={clickAnt}></i>
                 <div className="dialog__container">
