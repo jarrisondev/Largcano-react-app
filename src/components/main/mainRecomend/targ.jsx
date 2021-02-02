@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Targ ({url, price, element1, element2, place, date, id, setTargId, setChekedDialog}){  
+function Targ ({url, price, element1, element2, place, date, id, setTargId, setCheckedDialog}){  
 
     return(
-            <div className="targ__targ" onClick={()=>{setChekedDialog(true)
+            <div className="targ__targ" onClick={()=>{setCheckedDialog(true)
                                                         setTargId(id-1)
                                                     }}>
                 <figure className="r_targ__img">

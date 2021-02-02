@@ -1,20 +1,10 @@
-import React, {useEffect, useRef} from 'react'
+import React from 'react'
 import Button from '../button/button'
 
-export default function ModalBox ({flag, content, on}){
-
-    let modalRef = useRef(null)
-
-    useEffect(()=>{
-        if(flag){
-            modalRef.current.classList.add('show_modal')
-        }else{
-            modalRef.current.classList.remove('show_modal')
-        }
-    })
+export default function ModalBox ({content, on}){
 
     return(
-        <dialog className="modal" ref={modalRef}>
+        <dialog className="modal">
             <div className="modal__modal_box">
                 <p className="modal_box__text">{content}</p>
                 <Button  classes="modal_box__buttom" content="Aceptar" on={on} boolean={false}/>

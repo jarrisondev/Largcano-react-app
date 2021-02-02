@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import Dialog from './components/dialog/dialog.jsx'
 import Header from './components/header/header.jsx'
 import Main from './components/main/main.jsx'
@@ -7,31 +7,24 @@ import Form from './components/form/form.jsx'
 import {targInf} from './components/targInf.json'
 
 function App() {
-  //states
+  //States
   let [targId, setTargId] = useState(0)
-  let [chekedDialog, setChekedDialog] = useState(false)
+  let [checkedDialog, setCheckedDialog] = useState(false)
   let [checkedForm, setCheckedForm] = useState(false)
   let [checkedMode, setCheckedMode] = useState(false)
-  let [dialogRef, setDialogRef] = useState(null)
 
-  let containerRef = useRef(null)
-
-  //this hook open and closed the dialog
+  //Add and remove the overflow in dialog
   useEffect(()=>{ 
-    if(dialogRef !== null){
-      if(chekedDialog){
-        dialogRef.current.classList.add('start')
+      if(checkedDialog){
         document.body.classList.add('overflow')
       }else{
-        dialogRef.current.classList.remove('start')
         document.body.classList.remove('overflow')
       }
-    }
 
     if(targInf.length === 8) localStorage.clear()
   })
   
-  //DarkMode
+  //DarkMode Light Mode
   useEffect(()=>{
     if(checkedMode){
       document.body.classList.remove('dark__mode')
@@ -43,11 +36,15 @@ function App() {
   },[checkedMode])
   
   return (
-    <div ref={containerRef} className="container">
-        <Dialog setDialogRef={setDialogRef} targId={targId} setChekedDialog={setChekedDialog} setTargId={setTargId}/>
-        <Header setCheckedForm={setCheckedForm} setCheckedMode={setCheckedMode} chekedDialog={chekedDialog} checkedForm={checkedForm} />
-        {checkedForm ? <Form  setCheckedForm={setCheckedForm} /> : <Main setTargId={setTargId} setChekedDialog={setChekedDialog} setCheckedForm={setCheckedForm} /> }
-        <Footer />
+    <div className="container">
+        <Header setCheckedForm={setCheckedForm} setCheckedMode={setCheckedMode} checkedForm={checkedForm} checkedDialog={checkedDialog} />
+        { checkedDialog 
+          ? <Dialog targId={targId} setCheckedDialog={setCheckedDialog} setTargId={setTargId}/> 
+          : checkedForm 
+            ? <Form  setCheckedForm={setCheckedForm} /> 
+            : <Main setTargId={setTargId} setCheckedDialog={setCheckedDialog} setCheckedForm={setCheckedForm} />
+        }
+      {!checkedDialog && <Footer /> } 
       </div>
   );
 } 

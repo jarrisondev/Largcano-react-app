@@ -2,14 +2,14 @@ import React, {useRef, useEffect} from 'react'
 import HeaderLogo from './headerLogo.jsx'
 import HeaderPublicar from './headerPublicar.jsx'
 
-function Header ({setCheckedForm, setCheckedMode, chekedDialog, checkedForm}){
+function Header ({setCheckedForm, setCheckedMode, checkedDialog, checkedForm}){
 
     let headerRef = useRef()
 
     useEffect(()=>{
-         if(chekedDialog || checkedForm) headerRef.current.style.display='none'
-         else headerRef.current.style.display='flex'
-    })
+        if(checkedDialog || checkedForm) headerRef.current.style.display='none'
+        else headerRef.current.style.display='flex'
+   })
 
     return(
         <>

@@ -8,12 +8,11 @@ import {targInf} from '../targInf.json'
 function Form ({setCheckedForm}){
     let date = new Date()
     let [checkedModalBox, setCheckedModalBox] = useState(false)
-    let [checkedSecondPart, setCheckedSecondPart] = useState(false)
     let [checkedFirtPart, setCheckedFirtPart] = useState(false)
+    let [checkedSecondPart, setCheckedSecondPart] = useState(false)
+    let [checkedImg, setCheckedImg] = useState(false)
 
     let [selectValue, setSelectValue] = useState('Vehiculo')
-
-    let [checkedImg, setCheckedImg] = useState(false)
 
     let months = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEPT','OCT','NOV','DIC']
     //dates for the new target
@@ -26,7 +25,7 @@ function Form ({setCheckedForm}){
     let [place, setPlace] = useState("")
     let [price, setPrice] = useState("")
     
-    let img = useRef(null)
+    let imgRef = useRef(null)
 
     function saveImg(){
         checkImg()
@@ -36,7 +35,7 @@ function Form ({setCheckedForm}){
             localStorage.setItem(cont, reader.result)
             setCont(cont+1)
         })
-        reader.readAsDataURL(img.current.files[0])
+        reader.readAsDataURL(imgRef.current.files[0])
     }
     function sendData() {
         if(checkedFirtPart && checkedSecondPart && checkedImg){
@@ -47,7 +46,7 @@ function Form ({setCheckedForm}){
         }
     }
     function checkImg(){
-       if(img.current.files.length===1) setCheckedImg(true)
+       if(imgRef.current.files.length===1) setCheckedImg(true)
        else setCheckedImg(false)
     }
 
@@ -67,7 +66,7 @@ function Form ({setCheckedForm}){
 
     return(
         <>
-            <ModalBox flag={checkedModalBox} content="Rellene los Campos Correctamente" on={setCheckedModalBox}/>
+            {checkedModalBox ? <ModalBox content="Rellene los Campos Correctamente" on={setCheckedModalBox}/> : null}
             <section className="main__recomend" id="main_recomend">
                 <form method="get">
                     <div className="containerForm">
@@ -80,7 +79,7 @@ function Form ({setCheckedForm}){
                             <SecondPart setC1={setC1} setC2={setC2} setC3={setC3} setPlace={setPlace} selectValue={selectValue} setCheckedSecondPart={setCheckedSecondPart}/>
                             <br/>
                             <div className="loadFiles">
-                                <input ref={img} type="file" id="file" onChange={saveImg}/>
+                                <input ref={imgRef} type="file" id="file" onChange={saveImg}/>
                             </div>
                             <br/>
                             <Button classes="btn-enviar" on={sendData} content="Publicar" boolean={true}/>

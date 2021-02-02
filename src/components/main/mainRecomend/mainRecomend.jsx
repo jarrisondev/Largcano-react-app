@@ -2,7 +2,7 @@ import React from 'react'
 import Targ from './targ.jsx'
 import {targInf} from '../../targInf.json'
 
-function MainRecomend ({setTargId, setChekedDialog}) {
+function MainRecomend ({setTargId, setCheckedDialog}) {
 
     return(
         <>
@@ -15,7 +15,7 @@ function MainRecomend ({setTargId, setChekedDialog}) {
                             url={object.urlImage} price={object.price} 
                             element1={object.element1} element2={object.element2} 
                             place={object.place} date={object.date} id={object.id} 
-                            setTargId={setTargId} setChekedDialog={setChekedDialog}/>
+                            setTargId={setTargId} setCheckedDialog={setCheckedDialog}/>
                         )
                     }
                 </div>

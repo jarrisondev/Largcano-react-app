@@ -1,14 +1,15 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef} from 'react'
 import Button from '../button/button'
 
 function MainPrincipal({setCheckedForm}) {
 
     let indiceMain = 0
+    let imgRef = useRef(null)
     
     function changeImageMain(){
         let imagesMain = ["./img/main/2.svg", "./img/main/3.svg", "./img/main/1.svg"]
         
-        document.sliderMain.src = imagesMain[indiceMain]
+        imgRef.current.src = imagesMain[indiceMain]
 
         if(indiceMain < 2) indiceMain++
         else indiceMain = 0
@@ -36,7 +37,7 @@ function MainPrincipal({setCheckedForm}) {
             </div>
             <br/>
             <div className="principal__image">
-                <img name="sliderMain" src="./img/main/1.svg" alt="principal"/>
+                <img ref={imgRef} src="./img/main/1.svg" alt="principal"/>
             </div>
         </section>
         </>

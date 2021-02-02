@@ -1,11 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react'
 import ModalBox from '../modal box/modalBox'
+import Button from '../button/button'
 import {targInf} from '../targInf.json'
 
-function Dialog({targId, setChekedDialog, setTargId, setDialogRef}){
+function Dialog({targId, setCheckedDialog, setTargId}){
 
     let [checkedDialogBuy, setCheckedDialogBuy] = useState(false)
-    let dialogRef = useRef(null)
     let propertyRef = useRef(null)
 
     function clickSig(){
@@ -23,11 +23,10 @@ function Dialog({targId, setChekedDialog, setTargId, setDialogRef}){
 
     return(
         <>
-           <dialog id="dialog" className="dialog" ref={dialogRef} onLoad={()=>{setDialogRef(dialogRef)}}>
+           <dialog id="dialog" className="dialog">
 
-                <ModalBox flag={checkedDialogBuy} content="En progreso" on={setCheckedDialogBuy}/>
+                {checkedDialogBuy ? <ModalBox content="En progreso" on={setCheckedDialogBuy}/> : null} 
 
-                <i className="fas fa-arrow-left arrow" id="ant" onClick={clickAnt}></i>
                 <div className="dialog__container">
                     <div className="container__img">
                         <img src={targInf[targId].urlImage} alt="Producto" />
@@ -38,12 +37,15 @@ function Dialog({targId, setChekedDialog, setTargId, setDialogRef}){
                         <p className="description">{targInf[targId].description}</p>
                         <p ref={propertyRef} className="property"></p>
                         <div className="container__buy">
-                            <p className="buy__buttom" onClick={()=> setCheckedDialogBuy(true)}>Comprar <i className="fas fa-shopping-cart"></i></p>
+                            <Button classes='buy__buttom' content= 'Comprar' on={setCheckedDialogBuy} boolean={true} iconClass="fas fa-shopping-cart"/>
+                            <div className="buy__arrows">
+                                <Button classes="fas fa-arrow-left arrow" content=""on={clickAnt}/>
+                                <Button classes="fas fa-arrow-right arrow"content="" on={clickSig}/>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <p><i className="fas fa-times exit"  onClick={()=>setChekedDialog(false)}></i></p>
-                <i className="fas fa-arrow-right arrow" onClick={clickSig} ></i>
+                <p><i className="fas fa-times exit"  onClick={()=>setCheckedDialog(false)}></i></p>
             </dialog> 
         </>
     )
