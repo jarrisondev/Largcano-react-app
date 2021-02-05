@@ -21,7 +21,7 @@ function App() {
         document.body.classList.remove('overflow')
       }
 
-    if(targInf.length === 8) localStorage.clear()
+    if(targInf.length === 10) localStorage.clear()
   })
   
   //DarkMode Light Mode

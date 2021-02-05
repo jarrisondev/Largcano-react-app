@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useState} from "react";
 
-function SecondPart({setC1, setC2, setC3, setPlace, selectValue, setCheckedSecondPart}){
+function SecondPart({setC1, setC2, setC3, setPlace, selectValue, setCheckedSecondPart, saveImg, imgRef}){
 
     let inputC1Ref = useRef(null)
     let inputC2Ref = useRef(null)
@@ -90,33 +90,30 @@ function SecondPart({setC1, setC2, setC3, setPlace, selectValue, setCheckedSecon
     return(
         <>
             <div className="segundaParte">
-                <label>
-                    <p>
-                        Ingrese 3 Caracteristicas:
-                    </p> 
-                    <br/>
                     <label>
+                        <p>
+                            Ingrese 3 Caracteristicas:
+                        </p> 
+                        <br/>
                             <input ref={inputC1Ref} type="text" id="inputC1" placeholder="primer caracteristica" className="inputC1" onBlur={()=>{setC1(inputC1Ref.current.value); checkCharacteristics()}}/>
                     </label>
-                    <br/>
                     <br/>
                     <label>
                             <input ref={inputC2Ref} type="text" id="inputC2" placeholder="segunda caracteristica" className="inputC2" onBlur={()=>{setC2(inputC2Ref.current.value); checkCharacteristics()}}/>
                     </label>
                     <br/>
-                    <br/>
                     <label>
                             <input ref={inputC3Ref} type="text" id="inputC3" placeholder="tercer caracteristica" className="inputC3" onBlur={()=>{setC3(inputC3Ref.current.value); checkCharacteristics()}}/>
                     </label> 
                     <br/> 
-                    <br/> 
-                    <label>
+                    <label className="inputPlace">
                         <p>
                             Ingrese su ubicación
                         </p> 
+                        <br/>
                             <input ref={inputPlaceRef} type="text" id="inputPlace" placeholder="Ingrese Ubicación" className="inputPlace" onBlur={()=> {setPlace(inputPlaceRef.current.value); checkPlace()}}/>
-                    </label>      
-                </label>
+                    </label>  
+                
             </div>
         </>
     )

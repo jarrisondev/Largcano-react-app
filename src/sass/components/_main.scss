@@ -1,3 +1,5 @@
+
+
 main{
     width: 100%;
     height: auto;
@@ -12,40 +14,24 @@ main{
         justify-content: space-between;
         
         .principal__boxText{
-            width: 50%;
             display: flex;
             flex-direction: column;
 
-            .boxText__title{
-                font-size: 3.5rem;
-                width: 75%;
-                line-height: 1.3;
+            .boxText__title{ 
                 font-weight: 700;
                 margin: 0% 0% 5% 2%;
                 color:rgb(255, 52, 37);
             }
 
-            .boxText__description{
-                font-size: 1.4rem;
-                text-align: justify;
-                width: 75%;
-                margin-left:5%;
-            }
-
             .boxText__button{
-                width: 35%;
                 font-size: 1.1rem;
-                height: 40px;
-                margin:4% 0 0 4%;                
+
             }
         }
 
         .principal__image{
-            width: 350px;
-            min-height: 100%;
             display: flex;
             justify-content: center;
-            margin-right:3%;
 
             img{
                 width: 100%;
@@ -57,7 +43,6 @@ main{
     .main__recomend{
 
         .recomend__text{
-            font-size:3rem;
             font-weight: 700;
             color:rgb(255, 52, 37);
             text-align: center;
@@ -68,7 +53,8 @@ main{
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;            
-            
+            justify-items: center;
+
             .targ__targ{
                 width: 180px;
                 height: 260px;
@@ -116,7 +102,6 @@ main{
                         padding-left: 2%;
                     }
                 }
-                
                 .r_targ__place{
                     padding-left: 2%;
                     font-weight: 500;
@@ -130,24 +115,7 @@ main{
         }
     }
 
-
-    .main__video{
-        width: 100%;
-        margin-top: 3%;
-
-        .video__text{
-            font-size: 1.7rem;
-            margin-bottom: 4%;
-        }
-
-        .video__1{
-            display: block;
-            width: 30%;
-            margin: auto;
-        }
-    }
-
-    @media (max-width:550px){
+    @media (min-width:200px){
         .main__principal{
 
             .principal__boxText{
@@ -155,20 +123,18 @@ main{
 
                 .boxText__title{
                     width: 100%;
-                    line-height: none;
                     font-size: 10vw;
                     text-align: center;
                 }
                 .boxText__description{
                     width: 90%;
                     margin: 0 auto;
-                    font-size: 5.2vw;
+                    font-size: 5.3vw;
                     text-align: center;
                     line-height: 1.3;
                 }
 
                 .boxText__button{
-                    // display: none;
                     width: auto;
                     height: 5vh;
                     margin: 0 auto;
@@ -189,10 +155,90 @@ main{
             }
 
             .recomend__targ{
-                display: grid;
                 grid-template-columns: 1fr;
+            }    
+        }
+    }
+    @media(min-width:550px){
+        .main__principal{
+            margin-top: 2%;
+
+            .principal__boxText{
+                width: 100%;
+
+                .boxText__title{
+                    font-size: 8vw;
+                }
+                .boxText__description{
+                    font-size: 4.5vw;
+                }
+
+                .boxText__button{
+                    padding: 0 5%;
+                }
+            }
+
+            .principal__image{
+                width: 70%;
+            }
+        }
+
+        .main__recomend{
+
+            .recomend__targ{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 width: 100%;  
                 justify-items: center;
+            }    
+        }
+    }
+    @media(min-width:950px){
+        .main__principal{
+            margin-top: 0%;
+
+            .principal__boxText{
+                width: 50%;
+
+                .boxText__title{
+                    width: 75%;
+                    font-size: 3.5rem;
+                    text-align:left;
+                }
+
+                .boxText__description{
+                    width: 75%;
+                    margin-left:5%;
+                    font-size: 1.4rem;
+                    text-align: justify;
+                }
+
+                .boxText__button{
+                    width: 35%;
+                    height: 40px;
+                    padding:0;
+                    margin:4% 0 0 4%; 
+
+                }
+            }
+
+            .principal__image{
+                width: 350px;
+                min-height: 100%;
+                margin-right:3%;
+
+            }
+        }
+
+        .main__recomend{
+
+            .recomend__text{
+                font-size:3rem;
+
+            }
+
+            .recomend__targ{
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             }    
         }
     }

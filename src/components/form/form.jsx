@@ -16,7 +16,7 @@ function Form ({setCheckedForm}){
 
     let months = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEPT','OCT','NOV','DIC']
     //dates for the new target
-    let [cont, setCont] = useState(9 + localStorage.length)
+    let [cont, setCont] = useState(11 + localStorage.length)
     let [title, setTitle] = useState(" ")
     let [description, setDescription] = useState("")
     let [c1, setC1] = useState("")
@@ -28,15 +28,20 @@ function Form ({setCheckedForm}){
     let imgRef = useRef(null)
 
     function saveImg(){
-        checkImg()
-        const reader = new FileReader()
 
-        reader.addEventListener('load', ()=>{
-            localStorage.setItem(cont, reader.result)
-            setCont(cont+1)
-        })
-        reader.readAsDataURL(imgRef.current.files[0])
+            let token = checkImg()
+
+            if (token) {
+                const reader = new FileReader()
+        
+                reader.addEventListener('load', ()=>{
+                    localStorage.setItem(cont, reader.result)
+                    setCont(cont+1)
+                })
+                reader.readAsDataURL(imgRef.current.files[0])
+            }
     }
+
     function sendData() {
         if(checkedFirtPart && checkedSecondPart && checkedImg){
             targInf.push(data) 
@@ -45,9 +50,20 @@ function Form ({setCheckedForm}){
             setCheckedModalBox(true)
         }
     }
+
     function checkImg(){
-       if(imgRef.current.files.length===1) setCheckedImg(true)
-       else setCheckedImg(false)
+        if(imgRef.current.files.length===1){
+            if(imgRef.current.files[0].size <= 1478036){
+                setCheckedImg(true)
+                return true
+            }else{
+                setCheckedImg(false)
+                return false
+            }
+        } else {
+            setCheckedImg(false)
+            return false
+        } 
     }
 
     // object with save the data for push to the targInf
@@ -72,16 +88,18 @@ function Form ({setCheckedForm}){
                     <div className="containerForm">
                         <h1 className="titleForm">Publicar Producto</h1>
                         <div className="form">
-                            <i className="fas fa-times exitForm" id="exitForm" onClick={()=> setCheckedForm(false)} ></i>
-                            <FirtPart setTitle={setTitle} setDescription={setDescription} setPrice={setPrice} setSelectValue={setSelectValue} setCheckedFirtPart={setCheckedFirtPart}/>
-                            <br/>
-                            <br/>
-                            <SecondPart setC1={setC1} setC2={setC2} setC3={setC3} setPlace={setPlace} selectValue={selectValue} setCheckedSecondPart={setCheckedSecondPart}/>
+                            <div className="form__containerExit">
+                                <i className="fas fa-times containerExit__exit" onClick={()=> setCheckedForm(false)} ></i>
+                            </div>
+                           <div className="form__containerInputs">
+                                <FirtPart setTitle={setTitle} setDescription={setDescription} setPrice={setPrice} setSelectValue={setSelectValue} setCheckedFirtPart={setCheckedFirtPart}/>
+                                <br/>
+                                <SecondPart setC1={setC1} setC2={setC2} setC3={setC3} setPlace={setPlace} selectValue={selectValue} setCheckedSecondPart={setCheckedSecondPart}/>
+                           </div>
                             <br/>
                             <div className="loadFiles">
                                 <input ref={imgRef} type="file" id="file" onChange={saveImg}/>
-                            </div>
-                            <br/>
+                            </div> 
                             <Button classes="btn-enviar" on={sendData} content="Publicar" boolean={true}/>
                         </div>
                     </div>

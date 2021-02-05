@@ -80,6 +80,7 @@
     color:white;
     font-size:0.7rem;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover{
         background:linear-gradient(#ff3f3f 50%, #ff5815 100%);

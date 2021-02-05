@@ -58,7 +58,7 @@ function FirtPart({setTitle, setDescription, setPrice, setSelectValue, setChecke
                         Seleccionar categoria:
                     </p>
                     <br/>
-                    <select id="select1" ref={inputSelectRef} onChange={()=> setSelectValue(inputSelectRef.current.value)}>
+                    <select className="primera_parte__select" ref={inputSelectRef} onChange={()=> setSelectValue(inputSelectRef.current.value)}>
                         <option value="Vehiculo">Vehiculo</option>
                         <option value="Vestimenta">Vestimenta</option>
                         <option value="Consolas">Consolas</option>
@@ -81,6 +81,7 @@ function FirtPart({setTitle, setDescription, setPrice, setSelectValue, setChecke
                     Ingrese Una Descripción: 
                     <textarea  ref={inputDescriptionRef} id="inputDescription" className="description" placeholder="ingrese descripción" onBlur={()=>{setDescription(inputDescriptionRef.current.value); checkDescription()}}></textarea>
                 </label>
+                <br/>
                 <br/>
                 <label>
                     <p>

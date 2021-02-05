@@ -45,7 +45,7 @@ function Dialog({targId, setCheckedDialog, setTargId}){
                         </div>
                     </div>
                 </div>
-                <p><i className="fas fa-times exit"  onClick={()=>setCheckedDialog(false)}></i></p>
+                <p className="container__exit"><i className="fas fa-times exit"  onClick={()=>setCheckedDialog(false)}></i></p>
             </dialog> 
         </>
     )
