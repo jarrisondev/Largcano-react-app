@@ -1,122 +1,236 @@
-import React, {useRef, useEffect, useState} from "react";
+import React, { useRef, useContext, useReducer, useEffect } from 'react'
+import { FormContext, SecondPartContext } from '../../context/FormContext'
 
-function SecondPart({setC1, setC2, setC3, setPlace, selectValue, setCheckedSecondPart, saveImg, imgRef}){
+function SecondPart() {
+  const { secondPartData, setSecondPartData, firstPartData } = useContext(
+    SecondPartContext
+  )
+  const { checkForm, setCheckForm } = useContext(FormContext)
 
-    let inputC1Ref = useRef(null)
-    let inputC2Ref = useRef(null)
-    let inputC3Ref = useRef(null)
-    let inputPlaceRef = useRef(null)
+  let characteristic1 = useRef(null)
+  let characteristic2 = useRef(null)
+  let characteristic3 = useRef(null)
 
-    let [flagC, setFlagC] = useState(false)
-    let [flagPlace, setFlagPlace] = useState(false)
-
-    useEffect(()=>{
-        if(selectValue === 'Vehiculo'){
-            inputC1Ref.current.value = 'Marca: '
-            inputC2Ref.current.value = 'Condición:'
-            inputC3Ref.current.value = 'Kilometraje:'
-        }else if(selectValue === 'Vestimenta'){
-            inputC1Ref.current.value = 'tipo: '
-            inputC2Ref.current.value = 'Marca:'
-            inputC3Ref.current.value = 'categoria:'
-        }else if(selectValue === 'Consolas'){
-            inputC1Ref.current.value = 'Cpu: '
-            inputC2Ref.current.value = 'Capacidad:'
-            inputC3Ref.current.value = 'Memoria:'
-        }else if(selectValue === 'Juguetes'){
-            inputC1Ref.current.value = 'Tamaño: '
-            inputC2Ref.current.value = 'Clasificación:'
-            inputC3Ref.current.value = 'Material:'
-        }else{
-            inputC1Ref.current.value = 'sexo: '
-            inputC2Ref.current.value = 'Condición:'
-            inputC3Ref.current.value = 'categoria:'
+  const initialState = {
+    characteristics1: false,
+    characteristics2: false,
+    characteristics3: false,
+    place: false,
+  }
+  const inputCheckReducer = (state, action) => {
+    switch (action.type) {
+      case 'CHECK_CHARACTERISTIC_1':
+        return {
+          ...state,
+          characteristics1: action.payload,
         }
-    }, [selectValue])
-
-    function checkCharacteristics() {
-        let cont = 0
-
-        if(inputC1Ref.current.value === "" || inputC1Ref.current.value === 'Marca: '|| inputC1Ref.current.value === 'tipo: ' || inputC1Ref.current.value === 'Cpu: ' || inputC1Ref.current.value === 'Tamaño: ' || inputC1Ref.current.value ===  'sexo: ' ){
-            inputC1Ref.current.style.backgroundColor="rgb(194, 6, 0)"
-            inputC1Ref.current.style.color="white"
-            cont = 0
-        }else{
-            inputC1Ref.current.style.backgroundColor="rgb(232, 240, 254)"
-            inputC1Ref.current.style.color="Black"
-            cont++
+      case 'CHECK_CHARACTERISTIC_2':
+        return {
+          ...state,
+          characteristics2: action.payload,
+        }
+      case 'CHECK_CHARACTERISTIC_3':
+        return {
+          ...state,
+          characteristics3: action.payload,
+        }
+      case 'CHECK_PLACE':
+        return {
+          ...state,
+          place: action.payload,
         }
 
-        if(inputC2Ref.current.value === "" || inputC2Ref.current.value === 'Condición:'|| inputC2Ref.current.value === 'Marca:' || inputC2Ref.current.value === 'Capacidad:' || inputC2Ref.current.value === 'Clasificación:' || inputC2Ref.current.value === 'Condición:' ){
-            inputC2Ref.current.style.backgroundColor="rgb(194, 6, 0)"
-            inputC2Ref.current.style.color="white"
-            cont = 0
-        }else{
-            inputC2Ref.current.style.backgroundColor="rgb(232, 240, 254)"
-            inputC2Ref.current.style.color="Black"
-            cont++
-        }
-
-        if(inputC3Ref.current.value === "" || inputC3Ref.current.value === "Kilometraje:"|| inputC3Ref.current.value === "categoria:" || inputC3Ref.current.value === 'Memoria:' || inputC3Ref.current.value === 'Material:' || inputC3Ref.current.value === 'categoria:' ){
-            inputC3Ref.current.style.backgroundColor="rgb(194, 6, 0)"
-            inputC3Ref.current.style.color="white"
-            cont = 0
-        }else{
-            inputC3Ref.current.style.backgroundColor="rgb(232, 240, 254)"
-            inputC3Ref.current.style.color="Black"
-            cont++
-        }
-
-        if(cont=== 3) setFlagC(true)
-        else setFlagC(false)
+      default:
+        return state
     }
+  }
+  const [state, dispatch] = useReducer(inputCheckReducer, initialState)
 
-    function checkPlace() {
-        if(inputPlaceRef.current.value === ""){
-            inputPlaceRef.current.style.backgroundColor="rgb(194, 6, 0)"
-            inputPlaceRef.current.style.color="white"
-            setFlagPlace(false)
-        }else{
-            inputPlaceRef.current.style.backgroundColor="rgb(232, 240, 254)"
-            inputPlaceRef.current.style.color="Black"
-            setFlagPlace(true)
-        }
+  const checkCharacteristics1 = (e) => {
+    if (
+      e.target.value === '' ||
+      e.target.value === 'Marca: ' ||
+      e.target.value === 'tipo: ' ||
+      e.target.value === 'Cpu: ' ||
+      e.target.value === 'Tamaño: ' ||
+      e.target.value === 'sexo: '
+    ) {
+      e.target.style.backgroundColor = 'rgb(194, 6, 0)'
+      e.target.style.color = 'white'
+      dispatch({ type: 'CHECK_CHARACTERISTIC_1', payload: false })
+    } else {
+      e.target.style.backgroundColor = 'rgb(232, 240, 254)'
+      e.target.style.color = 'Black'
+      dispatch({ type: 'CHECK_CHARACTERISTIC_1', payload: true })
+      setSecondPartData({
+        ...secondPartData,
+        characteristic1: e.target.value,
+      })
     }
+  }
+  const checkCharacteristics2 = (e) => {
+    if (
+      e.target.value === '' ||
+      e.target.value === 'Condición:' ||
+      e.target.value === 'Marca:' ||
+      e.target.value === 'Capacidad:' ||
+      e.target.value === 'Clasificación:' ||
+      e.target.value === 'Condición:'
+    ) {
+      e.target.style.backgroundColor = 'rgb(194, 6, 0)'
+      e.target.style.color = 'white'
+      dispatch({ type: 'CHECK_CHARACTERISTIC_2', payload: false })
+    } else {
+      e.target.style.backgroundColor = 'rgb(232, 240, 254)'
+      e.target.style.color = 'Black'
+      dispatch({ type: 'CHECK_CHARACTERISTIC_2', payload: true })
+      setSecondPartData({
+        ...secondPartData,
+        characteristic2: e.target.value,
+      })
+    }
+  }
+  const checkCharacteristics3 = (e) => {
+    if (
+      e.target.value === 'Kilometraje:' ||
+      e.target.value === 'categoria:' ||
+      e.target.value === 'Memoria:' ||
+      e.target.value === 'Material:' ||
+      e.target.value === 'categoria:'
+    ) {
+      e.target.style.backgroundColor = 'rgb(194, 6, 0)'
+      e.target.style.color = 'white'
+      dispatch({ type: 'CHECK_CHARACTERISTIC_3', payload: false })
+    } else {
+      e.target.style.backgroundColor = 'rgb(232, 240, 254)'
+      e.target.style.color = 'Black'
+      dispatch({ type: 'CHECK_CHARACTERISTIC_3', payload: true })
+      setSecondPartData({
+        ...secondPartData,
+        characteristic3: e.target.value,
+      })
+    }
+  }
+  function checkPlace(e) {
+    if (e.target.value === '') {
+      e.target.style.backgroundColor = 'rgb(194, 6, 0)'
+      e.target.style.color = 'white'
+      dispatch({ type: 'CHECK_PLACE', payload: false })
+    } else {
+      e.target.style.backgroundColor = 'rgb(232, 240, 254)'
+      e.target.style.color = 'Black'
+      dispatch({ type: 'CHECK_PLACE', payload: true })
+      setSecondPartData({
+        ...secondPartData,
+        place: e.target.value,
+      })
+    }
+  }
 
-    useEffect(()=>{
-        if(flagC && flagPlace) setCheckedSecondPart(true)
-    })
+  const loadCharacteristics = (date) => {
+    if (date === 'Vehiculo') {
+      characteristic1.current.value = 'Marca:'
+      characteristic2.current.value = 'Condición:'
+      characteristic3.current.value = 'Kilometraje:'
+    } else if (date === 'Vestimenta') {
+      characteristic1.current.value = 'tipo: '
+      characteristic2.current.value = 'Marca:'
+      characteristic3.current.value = 'categoria:'
+    } else if (date === 'Consolas') {
+      characteristic1.current.value = 'Cpu:'
+      characteristic2.current.value = 'Capacidad:'
+      characteristic3.current.value = 'Memoria:'
+    } else if (date === 'Juguetes') {
+      characteristic1.current.value = 'Tamaño:'
+      characteristic2.current.value = 'Clasificación:'
+      characteristic3.current.value = 'Material:'
+    } else {
+      characteristic1.current.value = 'sexo:'
+      characteristic2.current.value = 'Condición:'
+      characteristic3.current.value = 'categoria:'
+    }
+  }
+  useEffect(() => {
+    loadCharacteristics(firstPartData.select)
+  }, [firstPartData.select])
 
-    return(
-        <>
-            <div className="segundaParte">
-                    <label>
-                        <p>
-                            Ingrese 3 Caracteristicas:
-                        </p> 
-                        <br/>
-                            <input ref={inputC1Ref} type="text" id="inputC1" placeholder="primer caracteristica" className="inputC1" onBlur={()=>{setC1(inputC1Ref.current.value); checkCharacteristics()}}/>
-                    </label>
-                    <br/>
-                    <label>
-                            <input ref={inputC2Ref} type="text" id="inputC2" placeholder="segunda caracteristica" className="inputC2" onBlur={()=>{setC2(inputC2Ref.current.value); checkCharacteristics()}}/>
-                    </label>
-                    <br/>
-                    <label>
-                            <input ref={inputC3Ref} type="text" id="inputC3" placeholder="tercer caracteristica" className="inputC3" onBlur={()=>{setC3(inputC3Ref.current.value); checkCharacteristics()}}/>
-                    </label> 
-                    <br/> 
-                    <label className="inputPlace">
-                        <p>
-                            Ingrese su ubicación
-                        </p> 
-                        <br/>
-                            <input ref={inputPlaceRef} type="text" id="inputPlace" placeholder="Ingrese Ubicación" className="inputPlace" onBlur={()=> {setPlace(inputPlaceRef.current.value); checkPlace()}}/>
-                    </label>  
-                
-            </div>
-        </>
-    )
+  useEffect(() => {
+    if (
+      state.characteristics1 &&
+      state.characteristics2 &&
+      state.characteristics3 &&
+      state.place
+    ) {
+      setCheckForm({
+        ...checkForm,
+        checkedSecondPart: true,
+      })
+    } else {
+      setCheckForm({
+        ...checkForm,
+        checkedSecondPart: false,
+      })
+    }
+  }, [state])
+
+  return (
+    <>
+      <div className='segundaParte'>
+        <label>
+          <p>Ingrese 3 Caracteristicas:</p>
+          <br />
+          <input
+            ref={characteristic1}
+            type='text'
+            id='inputC1'
+            placeholder='primer caracteristica'
+            className='inputC1'
+            onLoadStart={(e) => {
+              loadCharacteristics(e, 1)
+            }}
+            onBlur={checkCharacteristics1}
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            ref={characteristic2}
+            type='text'
+            id='inputC2'
+            placeholder='segunda caracteristica'
+            className='inputC2'
+            onLoad={(e) => {
+              loadCharacteristics(e, 2)
+            }}
+            onBlur={checkCharacteristics2}
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            ref={characteristic3}
+            type='text'
+            id='inputC3'
+            placeholder='tercer caracteristica'
+            className='inputC3'
+            onBlur={checkCharacteristics3}
+          />
+        </label>
+        <br />
+        <label className='inputPlace'>
+          <p>Ingrese su ubicación</p>
+          <br />
+          <input
+            type='text'
+            id='inputPlace'
+            placeholder='Ingrese Ubicación'
+            className='inputPlace'
+            onBlur={checkPlace}
+          />
+        </label>
+      </div>
+    </>
+  )
 }
 
 export default SecondPart

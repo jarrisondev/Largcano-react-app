@@ -1,140 +1,142 @@
-::-webkit-scrollbar{
-    width:5px;
-    background: none;
+::-webkit-scrollbar {
+  width: 5px;
+  background: none;
 }
 
-::-webkit-scrollbar-thumb{
-    background-color: rgb(253, 75, 31);
-    border-radius:10px 0 0px 10px;
+::-webkit-scrollbar-thumb {
+  background-color: rgb(253, 75, 31);
+  border-radius: 10px 0 0px 10px;
 }
 
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.ligth__mode{
-    color:black;
-    background-color:white;
-    
-    $dialog-background:linear-gradient(#ff5b5b 50%, #ff672b 100%);
-    $content-color:white; 
-    $price-color:rgb(255, 51, 0);
-
-    $background:white;
-    $labelCheck-color: url(./img/theme/light.svg);
-    
-    $card-background:linear-gradient(#ff4a4a 50%, #ff672b 100%);
-    $card-background-hover: linear-gradient(#ff3f3f 50%, #ff5815 100%);
-    $card-color:white;
-    
-    $subFooter-background:rgb(15, 12, 19);
-
-    @import "components/dialog";
-    @import "components/header";
-    @import "components/main";
-    @import "components/footer";
+a {
+  text-decoration: none;
 }
 
-.dark__mode{
-    color:white;
-    background-color: black;
+.ligth__mode {
+  color: black;
+  background-color: white;
 
-    $dialog-background:linear-gradient(#0e0e0e 0%, #353535 50%, #0e0e0e 100%);
-    $content-color:white;
-    $price-color:rgb(255, 52, 37);
+  $dialog-background: linear-gradient(#ff5b5b 50%, #ff672b 100%);
+  $content-color: white;
+  $price-color: rgb(255, 51, 0);
 
-    $background:black;
-    $labelCheck-color: url(./img/theme/dark.svg);
+  $background: white;
+  $labelCheck-color: url(/img/light.svg);
 
-    $card-background: rgb(10, 10, 10);
-    $card-background-hover:rgb(5, 5, 5);
-    $card-color:rgb(226, 226, 226);
+  $card-background: linear-gradient(#ff4a4a 50%, #ff672b 100%);
+  $card-background-hover: linear-gradient(#ff3f3f 50%, #ff5815 100%);
+  $card-color: white;
 
-    $subFooter-background:linear-gradient(#ff553f 50%, #ff5e24 100%);
-    
-    @import "components/dialog";
-    @import "components/header";
-    @import "components/main";
-    @import "components/footer";
+  $subFooter-background: rgb(15, 12, 19);
+
+  @import 'components/dialog';
+  @import 'components/header';
+  @import 'components/main';
+  @import 'components/footer';
 }
 
-.overflow{
-    overflow: hidden;
+.dark__mode {
+  color: white;
+  background-color: black;
+
+  $dialog-background: linear-gradient(#0e0e0e 0%, #353535 50%, #0e0e0e 100%);
+  $content-color: white;
+  $price-color: rgb(255, 52, 37);
+
+  $background: black;
+  $labelCheck-color: url(/img/dark.svg);
+
+  $card-background: rgb(10, 10, 10);
+  $card-background-hover: rgb(5, 5, 5);
+  $card-color: rgb(226, 226, 226);
+
+  $subFooter-background: linear-gradient(#ff553f 50%, #ff5e24 100%);
+
+  @import 'components/dialog';
+  @import 'components/header';
+  @import 'components/main';
+  @import 'components/footer';
 }
 
-.container{
-    width: 90%;
-    margin: 0 auto;
-    font-size: 16px;
-    font-family: Gotham,'MuseoModerno', cursive;
-    user-select: none;
+.overflow {
+  overflow: hidden;
 }
 
-.button{
-    padding: 1% 2%;
-    border: 0;
-    outline: none;
-    background:linear-gradient(#ff4a2a 50%, rgb(255, 52, 37) 100%);
-    border-radius: 20px;
-    color:white;
-    font-size:0.7rem;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-
-    &:hover{
-        background:linear-gradient(#ff3f3f 50%, #ff5815 100%);
-    }
-
-    @media (max-width:550px){
-        background: linear-gradient(#ff3f3f 50%, #ff5815 100%);;
-    }
+.container {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: Gotham, 'MuseoModerno', cursive;
+  user-select: none;
 }
 
-.modal{
+.button {
+  padding: 1% 2%;
+  border: 0;
+  outline: none;
+  background: linear-gradient(#ff4a2a 50%, rgb(255, 52, 37) 100%);
+  border-radius: 20px;
+  color: white;
+  font-size: 0.7rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background: linear-gradient(#ff3f3f 50%, #ff5815 100%);
+  }
+
+  @media (max-width: 550px) {
+    background: linear-gradient(#ff3f3f 50%, #ff5815 100%);
+  }
+}
+
+.modal {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: Gotham, 'MuseoModerno', cursive;
+  background-color: rgba(12, 12, 12, 0.363);
+
+  .modal__modal_box {
+    background-color: rgb(26, 26, 26);
+    color: white;
     display: flex;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    border: 0;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-family: Gotham,'MuseoModerno', cursive;
-    background-color: rgba(12, 12, 12, 0.363);
+    align-content: space-around;
+    width: 25%;
+    height: 22%;
+    text-align: center;
+    border-radius: 10px;
 
-    .modal__modal_box{
-        background-color: rgb(26, 26, 26);
-        color: white;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: space-around;
-        width: 25%;
-        height: 22%;
-        text-align: center;
-        border-radius: 10px;
-        
-        .modal_box__text{
-            width: 100%;
-        }
-
-        .modal_box__buttom{
-            width: 150px;
-            height: 40px;
-            font-size: 1.1rem;
-        
-        }
+    .modal_box__text {
+      width: 100%;
     }
 
-    @media (max-width:550px){
-        .modal__modal_box{
-            width:90%;
-            text-align: center;
-        }
+    .modal_box__buttom {
+      width: 150px;
+      height: 40px;
+      font-size: 1.1rem;
     }
+  }
+
+  @media (max-width: 550px) {
+    .modal__modal_box {
+      width: 90%;
+      text-align: center;
+    }
+  }
 }
 
-
-@import "components/form";
+@import 'components/form';

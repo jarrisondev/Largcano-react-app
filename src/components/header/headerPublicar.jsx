@@ -1,24 +1,37 @@
-import React, {useRef} from 'react'
+import { useContext } from 'react'
+import { CounterContext } from '../../context/CounterContext'
+import { Link } from 'react-router-dom'
 import Button from '../button/button'
 
-function HeaderPublicar ({setCheckedForm, setCheckedMode}){
+function HeaderPublicar() {
+  let { setCheckedMode } = useContext(CounterContext)
 
-    let checkThemeRef = useRef(null)
+  const HandleCheckTheme = (e) => {
+    setCheckedMode(e.target.checked)
+  }
 
-    function HandleCheckTheme() {
-        if(checkThemeRef.current.checked) setCheckedMode(true)
-        else setCheckedMode(false)
-    }
-
-    return(
-        <>
-        <div className="header__publicar_check">
-                <input id="checktheme" type="checkBox" ref={checkThemeRef} className="publicar_check__check"  onChange={HandleCheckTheme}/>
-                <label htmlFor="checktheme" className="publicar_check__checkLabel"></label>
-                < Button classes="publicar_check__publicar" on={setCheckedForm} content="Publica un articulo" boolean={true}/>
-        </div>
-        </>
-    )
+  return (
+    <>
+      <div className='header__publicar_check'>
+        <input
+          id='checktheme'
+          type='checkBox'
+          className='publicar_check__check'
+          onChange={HandleCheckTheme}
+        />
+        <label
+          htmlFor='checktheme'
+          className='publicar_check__checkLabel'
+        ></label>
+        <Link to='/form'>
+          <Button
+            classes='publicar_check__publicar'
+            content='Publica un articulo'
+          />
+        </Link>
+      </div>
+    </>
+  )
 }
 
 export default HeaderPublicar

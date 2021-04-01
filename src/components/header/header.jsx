@@ -1,26 +1,16 @@
-import React, {useRef, useEffect} from 'react'
 import HeaderLogo from './headerLogo.jsx'
 import HeaderPublicar from './headerPublicar.jsx'
 
-function Header ({setCheckedForm, setCheckedMode, checkedDialog, checkedForm}){
-
-    let headerRef = useRef()
-
-    useEffect(()=>{
-        if(checkedDialog || checkedForm) headerRef.current.style.display='none'
-        else headerRef.current.style.display='flex'
-   })
-
-    return(
-        <>
-        <header className="header" ref={headerRef}>
-            <HeaderLogo />
-            <br/>
-            <HeaderPublicar setCheckedForm={setCheckedForm} setCheckedMode={setCheckedMode}/>
-        </header>
-
-        </>
-    )
+function Header() {
+  return (
+    <>
+      <header className='header'>
+        <HeaderLogo />
+        <br />
+        <HeaderPublicar />
+      </header>
+    </>
+  )
 }
 
 export default Header
