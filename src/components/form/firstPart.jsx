@@ -1,7 +1,5 @@
-// import { useEffect, useContext, useReducer } from 'react'
-import { useContext, useReducer } from 'react'
-// import { FormContext, FirstPartContext } from '../../context/FormContext'
-import { FirstPartContext } from '../../context/FormContext'
+import { useEffect, useContext, useReducer } from 'react'
+import { FormContext, FirstPartContext } from '../../context/FormContext'
 
 function FirtPart() {
   //this initial state is used in the reducer
@@ -12,7 +10,7 @@ function FirtPart() {
     price: false,
   }
   //context of firstPart and checkForm
-  // const { checkForm, setCheckForm } = useContext(FormContext)
+  const { checkForm, setCheckForm } = useContext(FormContext)
   const { firstPartData, setFirstPartData } = useContext(FirstPartContext)
 
   //reducer for save the token of the inputs
@@ -88,21 +86,24 @@ function FirtPart() {
     }
   }
 
-  //send token if all inputs in this file are check or not
-  // useEffect(() => {
-  //   if (state.title && state.description && state.price) {
-  //     setCheckForm({
-  //       ...checkForm,
-  //       checkedFirstPart: true,
-  //     })
-  //   } else {
-  //     setCheckForm({
-  //       ...checkForm,
-  //       checkedFirstPart: false,
-  //     })
-  //   }
-  // }, [state])
-  console.log(state)
+  // send token if all inputs in this file are check or not
+  useEffect(() => {
+    if (!checkForm.checkedFirstPart) {
+      if (state.title && state.description && state.price) {
+        setCheckForm({
+          ...checkForm,
+          checkedFirstPart: true,
+        })
+      }
+    } else {
+      if (!state.title || !state.description || !state.price) {
+        setCheckForm({
+          ...checkForm,
+          checkedFirstPart: false,
+        })
+      }
+    }
+  })
 
   return (
     <>

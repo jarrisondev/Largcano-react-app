@@ -16,7 +16,7 @@ function Form({ setCounter }) {
   let date = new Date()
   const { counter } = useContext(CounterContext)
 
-  let checkedParts = {
+  let initialCheckedParts = {
     checkedFirstPart: false,
     checkedSecondPart: false,
     checkedImg: false,
@@ -35,7 +35,7 @@ function Form({ setCounter }) {
     place: '',
   }
 
-  let [checkForm, setCheckForm] = useState(checkedParts)
+  let [checkForm, setCheckForm] = useState(initialCheckedParts)
   let [firstPartData, setFirstPartData] = useState(initialFirtsPartData)
   let [secondPartData, setSecondPartData] = useState(initialSecondPartData)
 
@@ -98,7 +98,7 @@ function Form({ setCounter }) {
       checkForm.checkedImg
     ) {
       targInf.push(data)
-      setCheckForm(checkedParts)
+      setCheckForm(initialCheckedParts)
       console.log('se envió')
     } else {
       console.log('no se envio')
@@ -135,14 +135,16 @@ function Form({ setCounter }) {
                 </div>
                 <div className='form__containerInputs'>
                   <FirstPartContext.Provider
-                    value={{ firstPartData, setFirstPartData }}
-                  >
+                    value={{ firstPartData, setFirstPartData }}>
                     <FirstPart />
                   </FirstPartContext.Provider>
                   <br />
                   <SecondPartContext.Provider
-                    value={{ secondPartData, setSecondPartData, firstPartData }}
-                  >
+                    value={{
+                      secondPartData,
+                      setSecondPartData,
+                      firstPartData,
+                    }}>
                     <SecondPart />
                   </SecondPartContext.Provider>
                 </div>

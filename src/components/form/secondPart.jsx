@@ -1,12 +1,11 @@
 import React, { useRef, useContext, useReducer, useEffect } from 'react'
-// import { FormContext, SecondPartContext } from '../../context/FormContext'
-import { SecondPartContext } from '../../context/FormContext'
+import { FormContext, SecondPartContext } from '../../context/FormContext'
 
 function SecondPart() {
   const { secondPartData, setSecondPartData, firstPartData } = useContext(
     SecondPartContext
   )
-  // const { checkForm, setCheckForm } = useContext(FormContext)
+  const { checkForm, setCheckForm } = useContext(FormContext)
 
   let characteristic1 = useRef(null)
   let characteristic2 = useRef(null)
@@ -155,25 +154,33 @@ function SecondPart() {
     loadCharacteristics(firstPartData.select)
   }, [firstPartData.select])
 
-  console.log(state)
-  // useEffect(() => {
-  //   if (
-  //     state.characteristics1 &&
-  //     state.characteristics2 &&
-  //     state.characteristics3 &&
-  //     state.place
-  //   ) {
-  //     setCheckForm({
-  //       ...checkForm,
-  //       checkedSecondPart: true,
-  //     })
-  //   } else {
-  //     setCheckForm({
-  //       ...checkForm,
-  //       checkedSecondPart: false,
-  //     })
-  //   }
-  // }, [state])
+  useEffect(() => {
+    if (!checkForm.checkedSecondPart) {
+      if (
+        state.characteristics1 &&
+        state.characteristics2 &&
+        state.characteristics3 &&
+        state.place
+      ) {
+        setCheckForm({
+          ...checkForm,
+          checkedSecondPart: true,
+        })
+      }
+    } else {
+      if (
+        !state.characteristics1 ||
+        !state.characteristics2 ||
+        !state.characteristics3 ||
+        !state.place
+      ) {
+        setCheckForm({
+          ...checkForm,
+          checkedSecondPart: false,
+        })
+      }
+    }
+  })
 
   return (
     <>
