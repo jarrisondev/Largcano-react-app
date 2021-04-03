@@ -1,5 +1,7 @@
-import { useEffect, useContext, useReducer } from 'react'
-import { FormContext, FirstPartContext } from '../../context/FormContext'
+// import { useEffect, useContext, useReducer } from 'react'
+import { useContext, useReducer } from 'react'
+// import { FormContext, FirstPartContext } from '../../context/FormContext'
+import { FirstPartContext } from '../../context/FormContext'
 
 function FirtPart() {
   //this initial state is used in the reducer
@@ -10,7 +12,7 @@ function FirtPart() {
     price: false,
   }
   //context of firstPart and checkForm
-  const { checkForm, setCheckForm } = useContext(FormContext)
+  // const { checkForm, setCheckForm } = useContext(FormContext)
   const { firstPartData, setFirstPartData } = useContext(FirstPartContext)
 
   //reducer for save the token of the inputs
@@ -87,19 +89,20 @@ function FirtPart() {
   }
 
   //send token if all inputs in this file are check or not
-  useEffect(() => {
-    if (state.title && state.description && state.price) {
-      setCheckForm({
-        ...checkForm,
-        checkedFirstPart: true,
-      })
-    } else {
-      setCheckForm({
-        ...checkForm,
-        checkedFirstPart: false,
-      })
-    }
-  }, [state])
+  // useEffect(() => {
+  //   if (state.title && state.description && state.price) {
+  //     setCheckForm({
+  //       ...checkForm,
+  //       checkedFirstPart: true,
+  //     })
+  //   } else {
+  //     setCheckForm({
+  //       ...checkForm,
+  //       checkedFirstPart: false,
+  //     })
+  //   }
+  // }, [state])
+  console.log(state)
 
   return (
     <>
@@ -111,8 +114,7 @@ function FirtPart() {
             className='primera_parte__select'
             onChange={(e) =>
               setFirstPartData({ ...firstPartData, select: e.target.value })
-            }
-          >
+            }>
             <option value='Vehiculo'>Vehiculo</option>
             <option value='Vestimenta'>Vestimenta</option>
             <option value='Consolas'>Consolas</option>
@@ -134,8 +136,7 @@ function FirtPart() {
           <textarea
             className='description'
             placeholder='ingrese descripción'
-            onBlur={checkDescription}
-          ></textarea>
+            onBlur={checkDescription}></textarea>
         </label>
         <br />
         <br />

@@ -6,7 +6,7 @@ function MainPrincipal() {
   let [indice, setIndice] = useState(1)
 
   const changeImageMain = () => {
-    if (indice <= 2) setIndice(indice++)
+    if (indice <= 3) setIndice(indice++)
     else setIndice(1)
   }
 
