@@ -1,19 +1,20 @@
 {
   "name": "largcano-react",
   "version": "0.1.0",
-  "private":"true",
+  "private": "true",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "serve": "^11.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "serve": "serve -s build"
   },
- 
   "eslintConfig": {
     "extends": [
       "react-app",
