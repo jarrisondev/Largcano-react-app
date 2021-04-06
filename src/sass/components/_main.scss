@@ -128,11 +128,15 @@ main {
           line-height: 1.3;
         }
 
-        .boxText__button {
-          width: auto;
-          height: 5vh;
-          margin: 0 auto;
+        a{
+          text-align: center;
+          .boxText__button {
+            width: auto;
+            height: 5vh;
+          }
+
         }
+
       }
 
       .principal__image {
@@ -204,12 +208,16 @@ main {
           font-size: 1.4rem;
           text-align: justify;
         }
+        
+        a{
+          text-align: left;
 
-        .boxText__button {
-          width: 35%;
-          height: 40px;
-          padding: 0;
-          margin: 4% 0 0 4%;
+          .boxText__button {
+            width: 35%;
+            height: 40px;
+            padding: 0;
+            margin: 4% 0 0 4%;
+          }
         }
       }
 

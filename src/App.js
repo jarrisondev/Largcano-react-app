@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <div className='container'>
-      <CounterContext.Provider value={{ counter, setCheckedMode }}>
+      <CounterContext.Provider value={{ counter, setCheckedMode, checkedMode }}>
         <Router>
           <Switch>
             <Route path='/form'>

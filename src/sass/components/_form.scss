@@ -154,12 +154,14 @@
             }
         }
     
-        .btn-enviar{
-            width: 200px;
-            margin:auto;
-            font-size: 1.2rem;
-            grid-row: 3;
-            grid-column: 1 ;
+        a{
+            text-align: center;
+            .btn-enviar{
+                width: 200px;
+                font-size: 1.2rem;
+                grid-row: 3;
+                grid-column: 1 ;
+            }
         }
     }
 

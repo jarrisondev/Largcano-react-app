@@ -66,9 +66,6 @@
     }
 
     a {
-      height: 35%;
-      width: 15%;
-
       .publicar_check__publicar {
         width: 100%;
         height: 100%;
@@ -94,9 +91,13 @@
         height: 2.3vh;
         margin-right: 3%;
       }
-
-      .publicar_check__publicar {
-        height: 3vh;
+      a {
+        height: 55%;
+        width: 45%;
+        .publicar_check__publicar {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
@@ -115,10 +116,14 @@
         height: 2.6vh;
         margin-right: 6%;
       }
-
-      .publicar_check__publicar {
+      a {
         font-size: 1rem;
-        padding: 0 7%;
+        height: 35%;
+        width: 15%;
+
+        .publicar_check__publicar {
+          padding: 0 7%;
+        }
       }
     }
   }

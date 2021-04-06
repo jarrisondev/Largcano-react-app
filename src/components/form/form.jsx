@@ -15,6 +15,7 @@ import {
 function Form({ setCounter }) {
   let date = new Date()
   const { counter } = useContext(CounterContext)
+  let data
 
   let initialCheckedParts = {
     checkedFirstPart: false,
@@ -63,9 +64,22 @@ function Form({ setCounter }) {
       const reader = new FileReader()
       reader.addEventListener('load', () => {
         localStorage.setItem(counter + 1, reader.result)
-        setCounter(counter + 1)
       })
       reader.readAsDataURL(imgRef.current.files[0])
+    }
+  }
+  function saveData() {
+    data = {
+      id: targInf.length + 1,
+      urlImage: localStorage.getItem(counter + 1),
+      title: firstPartData.title,
+      price: `COP ${firstPartData.price}`,
+      description: firstPartData.description,
+      property: `<ul><li>${secondPartData.characteristic1}</li><li>${secondPartData.characteristic2}</li><li>${secondPartData.characteristic3}</li></ul>`,
+      date: `${date.getDate()} ${months[date.getMonth()]}`,
+      place: secondPartData.place,
+      element1: firstPartData.title,
+      element2: '',
     }
   }
   function checkImg() {
@@ -97,26 +111,13 @@ function Form({ setCounter }) {
       checkForm.checkedSecondPart &&
       checkForm.checkedImg
     ) {
+      saveData()
       targInf.push(data)
+      setCounter(counter + 1)
       setCheckForm(initialCheckedParts)
-      console.log('se envió')
     } else {
-      console.log('no se envio')
+      //active the modal
     }
-  }
-
-  // object with save the data for push to the targInf
-  let data = {
-    id: targInf.length + 1,
-    urlImage: localStorage.getItem(counter),
-    title: firstPartData.title,
-    price: `COP ${firstPartData.price}`,
-    description: firstPartData.description,
-    property: `<ul><li>${secondPartData.characteristic1}</li><li>${secondPartData.characteristic2}</li><li>${secondPartData.characteristic3}</li></ul>`,
-    date: `${date.getDate()} ${months[date.getMonth()]}`,
-    place: secondPartData.place,
-    element1: firstPartData.title,
-    element2: '',
   }
 
   return (
@@ -152,14 +153,25 @@ function Form({ setCounter }) {
                 <div className='loadFiles'>
                   <input ref={imgRef} type='file' onChange={saveImg} />
                 </div>
-                <Button
-                  classes='btn-enviar'
-                  content='Publicar'
-                  onClick={sendData}
-                />
-                <button type='button' onClick={sendData}>
-                  P
-                </button>
+
+                {checkForm.checkedFirstPart &&
+                  checkForm.checkedSecondPart &&
+                  checkForm.checkedImg && (
+                    <Link to='/' onClick={sendData}>
+                      <Button classes='btn-enviar' content='Publicar' />
+                    </Link>
+                  )}
+
+                {}
+                {!checkForm.checkedFirstPart ||
+                !checkForm.checkedSecondPart ||
+                !checkForm.checkedImg ? (
+                  <Link to='/form'>
+                    <Button classes='btn-enviar' content='Publicar' />
+                  </Link>
+                ) : (
+                  ''
+                )}
               </FormContext.Provider>
             </div>
           </div>

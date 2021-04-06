@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Button from '../button/button'
 
 function HeaderPublicar() {
-  let { setCheckedMode } = useContext(CounterContext)
+  let { checkedMode, setCheckedMode } = useContext(CounterContext)
 
   const HandleCheckTheme = (e) => {
     setCheckedMode(e.target.checked)
@@ -14,6 +14,7 @@ function HeaderPublicar() {
     <>
       <div className='header__publicar_check'>
         <input
+          checked={checkedMode}
           id='checktheme'
           type='checkBox'
           className='publicar_check__check'
@@ -21,8 +22,7 @@ function HeaderPublicar() {
         />
         <label
           htmlFor='checktheme'
-          className='publicar_check__checkLabel'
-        ></label>
+          className='publicar_check__checkLabel'></label>
         <Link to='/form'>
           <Button
             classes='publicar_check__publicar'
