@@ -15,7 +15,7 @@ export default function App () {
 
   // clear localStorage
   useEffect(() => {
-    if (targInf.length === 10) localStorage.clear()
+    if (targInf.length === 10) window.localStorage.clear()
   })
 
   // DarkMode Light Mode

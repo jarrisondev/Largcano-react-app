@@ -3,7 +3,6 @@ import FirstPart from './firstPart.jsx'
 import SecondPart from './secondPart.jsx'
 import Button from '../button/button'
 import { Link } from 'react-router-dom'
-// import ModalBox from '../modal box/modalBox'
 import { targInf } from '../targInf.json'
 import { CounterContext } from '../../context/CounterContext'
 import {
@@ -61,9 +60,9 @@ function Form ({ setCounter }) {
   function saveImg () {
     const token = checkImg()
     if (token) {
-      const reader = new FileReader()
+      const reader = new window.FileReader()
       reader.addEventListener('load', () => {
-        localStorage.setItem(counter + 1, reader.result)
+        window.localStorage.setItem(counter + 1, reader.result)
       })
       reader.readAsDataURL(imgRef.current.files[0])
     }
@@ -71,7 +70,7 @@ function Form ({ setCounter }) {
   function saveData () {
     data = {
       id: targInf.length + 1,
-      urlImage: localStorage.getItem(counter + 1),
+      urlImage: window.localStorage.getItem(counter + 1),
       title: firstPartData.title,
       price: `COP ${firstPartData.price}`,
       description: firstPartData.description,
