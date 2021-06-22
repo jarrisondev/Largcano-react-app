@@ -8,17 +8,17 @@ import Form from './components/form/form.jsx'
 import { CounterContext } from './context/CounterContext'
 import { targInf } from './components/targInf.json'
 
-export default function App() {
-  //States
-  let [checkedMode, setCheckedMode] = useState(false)
-  let [counter, setCounter] = useState(10)
+export default function App () {
+  // States
+  const [checkedMode, setCheckedMode] = useState(false)
+  const [counter, setCounter] = useState(10)
 
-  //clear localStorage
+  // clear localStorage
   useEffect(() => {
     if (targInf.length === 10) localStorage.clear()
   })
 
-  //DarkMode Light Mode
+  // DarkMode Light Mode
   useEffect(() => {
     if (checkedMode) {
       document.body.classList.remove('dark__mode')
@@ -50,7 +50,5 @@ export default function App() {
         </Router>
       </CounterContext.Provider>
     </div>
-
-    //
   )
 }

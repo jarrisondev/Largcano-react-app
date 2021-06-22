@@ -9,40 +9,40 @@ import { CounterContext } from '../../context/CounterContext'
 import {
   FormContext,
   FirstPartContext,
-  SecondPartContext,
+  SecondPartContext
 } from '../../context/FormContext'
 
-function Form({ setCounter }) {
-  let date = new Date()
+function Form ({ setCounter }) {
+  const date = new Date()
   const { counter } = useContext(CounterContext)
   let data
 
-  let initialCheckedParts = {
+  const initialCheckedParts = {
     checkedFirstPart: false,
     checkedSecondPart: false,
-    checkedImg: false,
+    checkedImg: false
   }
-  //initial data parts
-  let initialFirtsPartData = {
+  // initial data parts
+  const initialFirtsPartData = {
     select: 'Vehiculo',
     title: '',
     description: '',
-    price: '',
+    price: ''
   }
-  let initialSecondPartData = {
+  const initialSecondPartData = {
     characteristic1: '',
     characteristic2: '',
     characteristic3: '',
-    place: '',
+    place: ''
   }
 
-  let [checkForm, setCheckForm] = useState(initialCheckedParts)
-  let [firstPartData, setFirstPartData] = useState(initialFirtsPartData)
-  let [secondPartData, setSecondPartData] = useState(initialSecondPartData)
+  const [checkForm, setCheckForm] = useState(initialCheckedParts)
+  const [firstPartData, setFirstPartData] = useState(initialFirtsPartData)
+  const [secondPartData, setSecondPartData] = useState(initialSecondPartData)
 
   // let [checkedModalBox, setCheckedModalBox] = useState(false)
 
-  let months = [
+  const months = [
     'ENE',
     'FEB',
     'MAR',
@@ -54,12 +54,12 @@ function Form({ setCounter }) {
     'SEPT',
     'OCT',
     'NOV',
-    'DIC',
+    'DIC'
   ]
-  let imgRef = useRef(null)
+  const imgRef = useRef(null)
 
-  function saveImg() {
-    let token = checkImg()
+  function saveImg () {
+    const token = checkImg()
     if (token) {
       const reader = new FileReader()
       reader.addEventListener('load', () => {
@@ -68,7 +68,7 @@ function Form({ setCounter }) {
       reader.readAsDataURL(imgRef.current.files[0])
     }
   }
-  function saveData() {
+  function saveData () {
     data = {
       id: targInf.length + 1,
       urlImage: localStorage.getItem(counter + 1),
@@ -79,33 +79,33 @@ function Form({ setCounter }) {
       date: `${date.getDate()} ${months[date.getMonth()]}`,
       place: secondPartData.place,
       element1: firstPartData.title,
-      element2: '',
+      element2: ''
     }
   }
-  function checkImg() {
+  function checkImg () {
     if (imgRef.current.files.length === 1) {
       if (imgRef.current.files[0].size <= 1478036) {
         setCheckForm({
           ...checkForm,
-          checkedImg: true,
+          checkedImg: true
         })
         return true
       } else {
         setCheckForm({
           ...checkForm,
-          checkedImg: false,
+          checkedImg: false
         })
         return false
       }
     } else {
       setCheckForm({
         ...checkForm,
-        checkedImg: false,
+        checkedImg: false
       })
       return false
     }
   }
-  function sendData() {
+  function sendData () {
     if (
       checkForm.checkedFirstPart &&
       checkForm.checkedSecondPart &&
@@ -116,7 +116,7 @@ function Form({ setCounter }) {
       setCounter(counter + 1)
       setCheckForm(initialCheckedParts)
     } else {
-      //active the modal
+      // active the modal
     }
   }
 
@@ -131,12 +131,13 @@ function Form({ setCounter }) {
               <FormContext.Provider value={{ checkForm, setCheckForm }}>
                 <div className='form__containerExit'>
                   <Link to='/'>
-                    <i className='fas fa-times containerExit__exit'></i>
+                    <i className='fas fa-times containerExit__exit' />
                   </Link>
                 </div>
                 <div className='form__containerInputs'>
                   <FirstPartContext.Provider
-                    value={{ firstPartData, setFirstPartData }}>
+                    value={{ firstPartData, setFirstPartData }}
+                  >
                     <FirstPart />
                   </FirstPartContext.Provider>
                   <br />
@@ -144,8 +145,9 @@ function Form({ setCounter }) {
                     value={{
                       secondPartData,
                       setSecondPartData,
-                      firstPartData,
-                    }}>
+                      firstPartData
+                    }}
+                  >
                     <SecondPart />
                   </SecondPartContext.Provider>
                 </div>
@@ -160,18 +162,17 @@ function Form({ setCounter }) {
                     <Link to='/' onClick={sendData}>
                       <Button classes='btn-enviar' content='Publicar' />
                     </Link>
-                  )}
-
-                {}
-                {!checkForm.checkedFirstPart ||
-                !checkForm.checkedSecondPart ||
-                !checkForm.checkedImg ? (
-                  <Link to='/form'>
-                    <Button classes='btn-enviar' content='Publicar' />
-                  </Link>
-                ) : (
-                  ''
                 )}
+
+                {!checkForm.checkedFirstPart || !checkForm.checkedSecondPart || !checkForm.checkedImg
+                  ? (
+                    <Link to='/form'>
+                      <Button classes='btn-enviar' content='Publicar' />
+                    </Link>
+                    )
+                  : (
+                      ''
+                    )}
               </FormContext.Provider>
             </div>
           </div>

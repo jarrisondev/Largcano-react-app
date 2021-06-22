@@ -14,10 +14,11 @@
     "build": "react-scripts build"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "devDependencies": {
+    "eslint-plugin-node": "11.1.0",
+    "standard": "16.0.3"
   },
   "browserslist": {
     "production": [
@@ -30,6 +31,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }

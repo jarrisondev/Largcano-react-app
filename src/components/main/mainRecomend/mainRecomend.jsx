@@ -3,7 +3,7 @@ import Targ from './targ.jsx'
 import { targInf } from '../../targInf.json'
 import { Link } from 'react-router-dom'
 
-function MainRecomend({ setTargId, setCheckedDialog }) {
+function MainRecomend ({ setTargId, setCheckedDialog }) {
   return (
     <>
       <section className='main__recomend' id='main__recomend'>

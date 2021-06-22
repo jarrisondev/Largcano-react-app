@@ -1,37 +1,37 @@
 import { useEffect, useContext, useReducer } from 'react'
 import { FormContext, FirstPartContext } from '../../context/FormContext'
 
-function FirtPart() {
-  //this initial state is used in the reducer
-  //its function is checking the input
-  let initialState = {
+function FirtPart () {
+  // this initial state is used in the reducer
+  // its function is checking the input
+  const initialState = {
     title: false,
     description: false,
-    price: false,
+    price: false
   }
-  //context of firstPart and checkForm
+  // context of firstPart and checkForm
   const { checkForm, setCheckForm } = useContext(FormContext)
   const { firstPartData, setFirstPartData } = useContext(FirstPartContext)
 
-  //reducer for save the token of the inputs
+  // reducer for save the token of the inputs
   const inputCheckReducer = (state, action) => {
     switch (action.type) {
       case 'CHECK_TITLE':
         return {
           ...state,
-          title: action.payload,
+          title: action.payload
         }
 
       case 'CHECK_DESCRIPTION':
         return {
           ...state,
-          description: action.payload,
+          description: action.payload
         }
 
       case 'CHECK_PRICE':
         return {
           ...state,
-          price: action.payload,
+          price: action.payload
         }
 
       default:
@@ -50,7 +50,7 @@ function FirtPart() {
       e.target.style.color = 'Black'
       setFirstPartData({
         ...firstPartData,
-        title: e.target.value,
+        title: e.target.value
       })
       dispatch({ type: 'CHECK_TITLE', payload: true })
     }
@@ -65,7 +65,7 @@ function FirtPart() {
       e.target.style.color = 'Black'
       setFirstPartData({
         ...firstPartData,
-        description: e.target.value,
+        description: e.target.value
       })
       dispatch({ type: 'CHECK_DESCRIPTION', payload: true })
     }
@@ -80,7 +80,7 @@ function FirtPart() {
       e.target.style.color = 'Black'
       setFirstPartData({
         ...firstPartData,
-        price: e.target.value,
+        price: e.target.value
       })
       dispatch({ type: 'CHECK_PRICE', payload: true })
     }
@@ -92,14 +92,14 @@ function FirtPart() {
       if (state.title && state.description && state.price) {
         setCheckForm({
           ...checkForm,
-          checkedFirstPart: true,
+          checkedFirstPart: true
         })
       }
     } else {
       if (!state.title || !state.description || !state.price) {
         setCheckForm({
           ...checkForm,
-          checkedFirstPart: false,
+          checkedFirstPart: false
         })
       }
     }
@@ -114,8 +114,8 @@ function FirtPart() {
           <select
             className='primera_parte__select'
             onChange={(e) =>
-              setFirstPartData({ ...firstPartData, select: e.target.value })
-            }>
+              setFirstPartData({ ...firstPartData, select: e.target.value })}
+          >
             <option value='Vehiculo'>Vehiculo</option>
             <option value='Vestimenta'>Vestimenta</option>
             <option value='Consolas'>Consolas</option>
@@ -137,7 +137,8 @@ function FirtPart() {
           <textarea
             className='description'
             placeholder='ingrese descripción'
-            onBlur={checkDescription}></textarea>
+            onBlur={checkDescription}
+          />
         </label>
         <br />
         <br />

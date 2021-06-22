@@ -5,8 +5,8 @@ import { targInf } from '../targInf.json'
 import { useParams, Link } from 'react-router-dom'
 import { CounterContext } from '../../context/CounterContext'
 
-function Dialog() {
-  let { counter } = useContext(CounterContext)
+function Dialog () {
+  const { counter } = useContext(CounterContext)
   let { id } = useParams()
   id = parseInt(id)
 
@@ -33,7 +33,7 @@ function Dialog() {
             <h3>{targInf[id - 1].title}</h3>
             <p className='price'>{targInf[id - 1].price}</p>
             <p className='description'>{targInf[id - 1].description}</p>
-            <p className='property'></p>
+            <p className='property' />
             <div className='container__buy'>
               <Button
                 classes='buy__buttom'
@@ -53,7 +53,7 @@ function Dialog() {
         </div>
         <Link to='/'>
           <p className='container__exit'>
-            <i className='fas fa-times exit'></i>
+            <i className='fas fa-times exit' />
           </p>
         </Link>
       </dialog>

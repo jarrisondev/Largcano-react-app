@@ -3,8 +3,8 @@ import { CounterContext } from '../../context/CounterContext'
 import { Link } from 'react-router-dom'
 import Button from '../button/button'
 
-function HeaderPublicar() {
-  let { checkedMode, setCheckedMode } = useContext(CounterContext)
+function HeaderPublicar () {
+  const { checkedMode, setCheckedMode } = useContext(CounterContext)
 
   const HandleCheckTheme = (e) => {
     setCheckedMode(e.target.checked)
@@ -22,7 +22,8 @@ function HeaderPublicar() {
         />
         <label
           htmlFor='checktheme'
-          className='publicar_check__checkLabel'></label>
+          className='publicar_check__checkLabel'
+        />
         <Link to='/form'>
           <Button
             classes='publicar_check__publicar'

@@ -1,4 +1,4 @@
-function HeaderLogo() {
+function HeaderLogo () {
   return (
     <>
       <div className='header__logo'>

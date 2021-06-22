@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Button from '../button/button'
 import { Link } from 'react-router-dom'
 
-function MainPrincipal() {
+function MainPrincipal () {
   let [indice, setIndice] = useState(1)
 
   const changeImageMain = () => {

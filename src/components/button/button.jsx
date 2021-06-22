@@ -1,9 +1,9 @@
-export default function Button({ classes, content, iconClass }) {
+export default function Button ({ classes, content, iconClass }) {
   return (
     <>
       <button type='button' className={'button ' + classes}>
         {content}
-        <i className={iconClass}></i>
+        <i className={iconClass} />
       </button>
     </>
   )

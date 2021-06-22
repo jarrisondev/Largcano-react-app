@@ -1,43 +1,43 @@
 import React, { useRef, useContext, useReducer, useEffect } from 'react'
 import { FormContext, SecondPartContext } from '../../context/FormContext'
 
-function SecondPart() {
+function SecondPart () {
   const { secondPartData, setSecondPartData, firstPartData } = useContext(
     SecondPartContext
   )
   const { checkForm, setCheckForm } = useContext(FormContext)
 
-  let characteristic1 = useRef(null)
-  let characteristic2 = useRef(null)
-  let characteristic3 = useRef(null)
+  const characteristic1 = useRef(null)
+  const characteristic2 = useRef(null)
+  const characteristic3 = useRef(null)
 
   const initialState = {
     characteristics1: false,
     characteristics2: false,
     characteristics3: false,
-    place: false,
+    place: false
   }
   const inputCheckReducer = (state, action) => {
     switch (action.type) {
       case 'CHECK_CHARACTERISTIC_1':
         return {
           ...state,
-          characteristics1: action.payload,
+          characteristics1: action.payload
         }
       case 'CHECK_CHARACTERISTIC_2':
         return {
           ...state,
-          characteristics2: action.payload,
+          characteristics2: action.payload
         }
       case 'CHECK_CHARACTERISTIC_3':
         return {
           ...state,
-          characteristics3: action.payload,
+          characteristics3: action.payload
         }
       case 'CHECK_PLACE':
         return {
           ...state,
-          place: action.payload,
+          place: action.payload
         }
 
       default:
@@ -64,7 +64,7 @@ function SecondPart() {
       dispatch({ type: 'CHECK_CHARACTERISTIC_1', payload: true })
       setSecondPartData({
         ...secondPartData,
-        characteristic1: e.target.value,
+        characteristic1: e.target.value
       })
     }
   }
@@ -86,7 +86,7 @@ function SecondPart() {
       dispatch({ type: 'CHECK_CHARACTERISTIC_2', payload: true })
       setSecondPartData({
         ...secondPartData,
-        characteristic2: e.target.value,
+        characteristic2: e.target.value
       })
     }
   }
@@ -107,11 +107,11 @@ function SecondPart() {
       dispatch({ type: 'CHECK_CHARACTERISTIC_3', payload: true })
       setSecondPartData({
         ...secondPartData,
-        characteristic3: e.target.value,
+        characteristic3: e.target.value
       })
     }
   }
-  function checkPlace(e) {
+  function checkPlace (e) {
     if (e.target.value === '') {
       e.target.style.backgroundColor = 'rgb(194, 6, 0)'
       e.target.style.color = 'white'
@@ -122,7 +122,7 @@ function SecondPart() {
       dispatch({ type: 'CHECK_PLACE', payload: true })
       setSecondPartData({
         ...secondPartData,
-        place: e.target.value,
+        place: e.target.value
       })
     }
   }
@@ -164,7 +164,7 @@ function SecondPart() {
       ) {
         setCheckForm({
           ...checkForm,
-          checkedSecondPart: true,
+          checkedSecondPart: true
         })
       }
     } else {
@@ -176,7 +176,7 @@ function SecondPart() {
       ) {
         setCheckForm({
           ...checkForm,
-          checkedSecondPart: false,
+          checkedSecondPart: false
         })
       }
     }

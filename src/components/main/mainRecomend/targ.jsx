@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Targ({
+function Targ ({
   url,
   price,
   element1,
@@ -9,7 +9,7 @@ function Targ({
   date,
   id,
   setTargId,
-  setCheckedDialog,
+  setCheckedDialog
 }) {
   return (
     <div className='targ__targ'>
